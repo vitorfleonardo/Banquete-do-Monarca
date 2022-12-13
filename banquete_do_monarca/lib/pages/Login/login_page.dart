@@ -1,68 +1,115 @@
 import 'dart:math';
+import 'package:banquete_do_monarca/pages/Home/home_page.dart';
+import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    bool isSwitched = false;
     return Scaffold(
-        body: Stack(children: [
-      Container(
-        child: Image.asset(
-          'assets/images/background_CPF.png',
-          fit: BoxFit.cover,
-          width: double.infinity,
-          height: double.infinity,
-        ),
-      ),
-      Positioned(
-        left: 45,
-        right: 0,
-        bottom: 80,
-        child: Image.asset(
-          'assets/images/fundo_digitar.png',
-        ),
-      ),
-      Positioned(
-          left: 235,
-          bottom: 310,
-          child: Image.asset('assets/images/digite_cpf.png')),
-      Positioned(
-          width: 240,
-          left: 360,
-          bottom: 300,
-          child: TextField(
-            decoration: InputDecoration(
-              hintText: 'CPF',
-              hintStyle: TextStyle(color: Color.fromARGB(255, 243, 243, 243)),
-              enabledBorder: UnderlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Color.fromARGB(255, 163, 120, 0))),
+      body: LayoutBuilder(
+        builder: (context, constraint) {
+          var largura = constraint.maxWidth;
+          return Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  "assets/images/background_CPF.png",
+                ),
+                fit: BoxFit.cover,
+              ),
             ),
-            keyboardType: TextInputType.number,
-          )),
-      Positioned(
-          left: 420,
-          bottom: 210,
-          child: ElevatedButton(
-            child:
-                Text('COMEÇAR', style: TextStyle(fontWeight: FontWeight.bold)),
-            style: ElevatedButton.styleFrom(
-              primary: Color.fromARGB(255, 107, 93, 67),
-              onPrimary: Color.fromARGB(255, 255, 255, 255),
-              shape: const BeveledRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(5))),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                        width: 400,
+                        height: 300,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/images/fundo_digitar1.png",
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        padding: const EdgeInsets.all(40),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Digite seu CPF.",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 40,
+                                      fontFamily: 'awesomeLathusca'),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 10),
+                                  child: Container(
+                                    width: 300,
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                        labelText: 'CPF',
+                                        labelStyle: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 243, 243, 243)),
+                                        enabledBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: Color.fromARGB(
+                                                    255, 163, 120, 0))),
+                                      ),
+                                      keyboardType: TextInputType.number,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 40),
+                                  child: ElevatedButton(
+                                    child: Text('COMECAR',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontFamily: 'awesomeLathusca')),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Color.fromARGB(255, 107, 93, 67),
+                                      onPrimary:
+                                          Color.fromARGB(255, 255, 255, 255),
+                                      shape: const BeveledRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(5))),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  StoryPage()));
+                                    },
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        )),
+                    Image.asset(
+                      "assets/images/logo1.png",
+                      width: 170,
+                      height: 170,
+                    ),
+                  ],
+                ),
+              ],
             ),
-            onPressed: () {
-              print('Pressed');
-            },
-          )),
-      Positioned(
-          left: 85,
-          right: 0,
-          bottom: -280,
-          child: Image.asset('assets/images/logo.png'))
-    ]));
+          );
+        },
+      ),
+    );
   }
 }
