@@ -11,52 +11,14 @@ class StoryPage extends StatelessWidget {
         body: LayoutBuilder(
           builder: (context, constraint) {
             return Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                        "assets/images/background_CPF.png",
-                      ),
-                      fit: BoxFit.cover),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          width: 700,
-                          height: 400,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(
-                                "assets/images/fundo_digitar.png",
-                              ),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Column(
-                                children: [
-                                  Image.asset(
-                                    "assets/images/logo1.png",
-                                    width: 200,
-                                    height: 150,
-                                  )
-                                  // Text(
-                                  //   ""
-                                  // )
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(
+                      "assets/images/Storytelling.jpg",
                     ),
-                  ],
-                ));
+                    fit: BoxFit.cover),
+              ),
+            );
           },
         ),
       ),

@@ -67,6 +67,9 @@ class LoginPage extends StatelessWidget {
                                                 color: Color.fromARGB(
                                                     255, 163, 120, 0))),
                                       ),
+                                      style: const TextStyle(
+                                          color: Color.fromARGB(
+                                              255, 255, 255, 255)),
                                       keyboardType: TextInputType.number,
                                     ),
                                   ),
