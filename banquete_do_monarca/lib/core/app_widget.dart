@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         primaryColor: AppColors.primary,
         accentColor: AppColors.secondary,
       ),
-      home: LoginPage(),
+      home: HomePage(),
     );
   }
 }
