@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:banquete_do_monarca/pages/Home/home_page.dart';
+import 'package:banquete_do_monarca/pages/MenusLaterais/home_page.dart';
 import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
                     Container(
                         width: 400,
                         height: 300,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
                               "assets/images/fundo_digitar1.png",
@@ -45,7 +45,7 @@ class LoginPage extends StatelessWidget {
                             Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   "Digite seu CPF.",
                                   style: TextStyle(
                                       color: Colors.white,
@@ -56,8 +56,9 @@ class LoginPage extends StatelessWidget {
                                   padding: const EdgeInsets.only(top: 10),
                                   child: Container(
                                     width: 300,
+                                    // brasil_fields 1.9.0 
                                     child: TextFormField(
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         labelText: 'CPF',
                                         labelStyle: TextStyle(
                                             color: Color.fromARGB(
@@ -77,7 +78,7 @@ class LoginPage extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.only(top: 40),
                                   child: ElevatedButton(
-                                    child: Text('COMECAR',
+                                    child: const Text('COMECAR',
                                         style: TextStyle(
                                             fontSize: 20,
                                             fontFamily: 'awesomeLathusca')),

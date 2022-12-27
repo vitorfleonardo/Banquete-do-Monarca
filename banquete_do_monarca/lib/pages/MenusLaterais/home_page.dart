@@ -1,23 +1,24 @@
+//import 'dart:html';
 import 'package:flutter/material.dart';
-
 
 import '../../components.dart';
 
-class BebidasPage extends StatefulWidget {
-  const BebidasPage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<BebidasPage> createState() => _BebidasPageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _BebidasPageState extends State<BebidasPage> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraint) {
-          var largura = constraint.maxWidth;
-          var comprimento = constraint.maxHeight;
+          // var largura = constraint.maxWidth;
+          // var comprimento = constraint.maxHeight;
+
           return Container(
             decoration: const BoxDecoration(
               image: DecorationImage(

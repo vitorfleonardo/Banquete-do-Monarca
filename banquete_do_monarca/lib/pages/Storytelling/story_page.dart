@@ -1,4 +1,4 @@
-import 'package:banquete_do_monarca/pages/Home/home_page.dart';
+import 'package:banquete_do_monarca/pages/MenusLaterais/home_page.dart';
 import 'package:flutter/material.dart';
 
 class StoryPage extends StatelessWidget {
