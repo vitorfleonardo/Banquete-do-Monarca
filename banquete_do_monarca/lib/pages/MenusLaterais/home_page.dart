@@ -16,9 +16,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraint) {
-          // var largura = constraint.maxWidth;
-          // var comprimento = constraint.maxHeight;
-
           return Container(
             decoration: const BoxDecoration(
               image: DecorationImage(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../../components.dart';
 
 class CardapioPage extends StatefulWidget {
@@ -16,8 +15,6 @@ class _CardapioPageState extends State<CardapioPage> {
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraint) {
-          var largura = constraint.maxWidth;
-          var comprimento = constraint.maxHeight;
           return Container(
             decoration: const BoxDecoration(
               image: DecorationImage(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../../components.dart';
 
 class BebidasPage extends StatefulWidget {
@@ -16,8 +15,6 @@ class _BebidasPageState extends State<BebidasPage> {
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraint) {
-          var largura = constraint.maxWidth;
-          var comprimento = constraint.maxHeight;
           return Container(
             decoration: const BoxDecoration(
               image: DecorationImage(

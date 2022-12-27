@@ -15,8 +15,6 @@ class _MercadoPageState extends State<MercadoPage> {
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraint) {
-          var largura = constraint.maxWidth;
-          var comprimento = constraint.maxHeight;
           return Container(
             decoration: const BoxDecoration(
               image: DecorationImage(

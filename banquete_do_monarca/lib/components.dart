@@ -11,13 +11,13 @@ class OpcoesMenu extends StatelessWidget {
   final BuildContext context;
   final String image;
   final Color color;
-  final Function onTap;
+  final Widget navigator;
   const OpcoesMenu(
       {Key? key,
       required this.context,
       required this.image,
       required this.color,
-      required this.onTap})
+      required this.navigator})
       : super(key: key);
 
   @override
@@ -33,7 +33,13 @@ class OpcoesMenu extends StatelessWidget {
             image,
           ))),
       child: InkWell(
-        onTap: onTap(),
+        onTap: () {
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (context) => navigator,
+            ),
+          );
+        },
       ),
     );
   }
@@ -54,86 +60,61 @@ class MenuLateral extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height * 0.11),
-              width: 142,
-              height: MediaQuery.of(context).size.height * 0.90,
+              width: MediaQuery.of(context).size.width * 0.13,
+              height: MediaQuery.of(context).size.height * 0.89,
               decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 50, 91, 124),
               ),
               child: Column(
                 children: [
                   OpcoesMenu(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const HomePage(),
-                        ),
-                      );
-                      isSelected.value = !isSelected.value;
-                    },
+                    navigator: const HomePage(),
                     context: context,
                     image: "assets/images/destaques.png",
                     color: isSelected.value
                         ? AppColors.secondary
                         : const Color.fromARGB(255, 50, 91, 124),
                   ),
-                  // OpcoesMenu(
-                  //   onTap: () {
-                  //     Navigator.of(context).pushReplacement(
-                  //       MaterialPageRoute(
-                  //         builder: (context) => const CardapioPage(),
-                  //       ),
-                  //     );
-                  //     isSelected.value = !isSelected.value;
-                  //   },
-                  //   context: context,
-                  //   image: "assets/images/cardapio.png",
-                  //   color: isSelected.value
-                  //       ? AppColors.secondary
-                  //       : const Color.fromARGB(255, 50, 91, 124),
-                  // ),
-                  // OpcoesMenu(
-                  //   onTap: () {
-                  //     Navigator.of(context).pushReplacement(
-                  //       MaterialPageRoute(
-                  //         builder: (context) => const BebidasPage(),
-                  //       ),
-                  //     );
-                  //     isSelected.value = !isSelected.value;
-                  //   },
-                  //   context: context,
-                  //   image: "assets/images/bebidas.png",
-                  //   color: isSelected.value
-                  //       ? AppColors.secondary
-                  //       : const Color.fromARGB(255, 50, 91, 124),
-                  // ),
-                  // OpcoesMenu(
-                  //   onTap: () {
-                  //     Navigator.of(context).push(
-                  //       MaterialPageRoute(
-                  //         builder: (context) => const MercadoPage(),
-                  //       ),
-                  //     );
-                  //     isSelected.value = !isSelected.value;
-                  //   },
-                  //   context: context,
-                  //   image: "assets/images/mercado.png",
-                  //   color: isSelected.value
-                  //       ? AppColors.secondary
-                  //       : const Color.fromARGB(255, 50, 91, 124),
-                  // ),
+                  OpcoesMenu(
+                    navigator: const CardapioPage(),
+                    context: context,
+                    image: "assets/images/cardapio.png",
+                    color: isSelected.value
+                        ? AppColors.secondary
+                        : const Color.fromARGB(255, 50, 91, 124),
+                  ),
+                  OpcoesMenu(
+                    navigator: const BebidasPage(),
+                    context: context,
+                    image: "assets/images/bebidas.png",
+                    color: isSelected.value
+                        ? AppColors.secondary
+                        : const Color.fromARGB(255, 50, 91, 124),
+                  ),
+                  OpcoesMenu(
+                    navigator: const MercadoPage(),
+                    context: context,
+                    image: "assets/images/mercado.png",
+                    color: isSelected.value
+                        ? AppColors.secondary
+                        : const Color.fromARGB(255, 50, 91, 124),
+                  ),
                   GestureDetector(
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: Container(
                         width: MediaQuery.of(context).size.width,
                         height: 50,
-                        child: const Text(
-                          "Sobre",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 30,
-                              fontFamily: 'awesomeLathusca'),
+                        child: const FittedBox(
+                          child: Text(
+                            "Sobre",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 30,
+                                fontFamily: 'awesomeLathusca'),
+                            maxLines: 1,
+                          ),
                         ),
                       ),
                     ),

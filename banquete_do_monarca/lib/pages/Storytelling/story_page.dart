@@ -11,6 +11,8 @@ class StoryPage extends StatelessWidget {
         body: LayoutBuilder(
           builder: (context, constraint) {
             return Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
