@@ -24,7 +24,11 @@ class _MercadoPageState extends State<MercadoPage> {
                 fit: BoxFit.fill,
               ),
             ),
-            child: MenuLateral(),
+            child: Row(
+              children: [
+                MenuLateral(),
+              ],
+            ),
           );
         },
       ),

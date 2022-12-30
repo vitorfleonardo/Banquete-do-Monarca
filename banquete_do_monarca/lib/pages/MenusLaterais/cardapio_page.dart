@@ -24,7 +24,11 @@ class _CardapioPageState extends State<CardapioPage> {
                 fit: BoxFit.fill,
               ),
             ),
-            child: MenuLateral(),
+            child: Row(
+              children: [
+                MenuLateral(),
+              ],
+            ),
           );
         },
       ),

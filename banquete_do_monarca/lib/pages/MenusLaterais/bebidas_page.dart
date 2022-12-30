@@ -24,7 +24,11 @@ class _BebidasPageState extends State<BebidasPage> {
                 fit: BoxFit.fill,
               ),
             ),
-            child: MenuLateral(),
+            child: Row(
+              children: [
+                MenuLateral(),
+              ],
+            ),
           );
         },
       ),
