@@ -1,17 +1,15 @@
-import 'dart:math';
-import 'package:banquete_do_monarca/pages/Home/home_page.dart';
+import 'package:brasil_fields/brasil_fields.dart';
 import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    bool isSwitched = false;
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraint) {
-          var largura = constraint.maxWidth;
           return Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -28,9 +26,7 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
-                        width: 400,
-                        height: 300,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
                               "assets/images/fundo_digitar1.png",
@@ -45,7 +41,7 @@ class LoginPage extends StatelessWidget {
                             Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   "Digite seu CPF.",
                                   style: TextStyle(
                                       color: Colors.white,
@@ -57,16 +53,21 @@ class LoginPage extends StatelessWidget {
                                   child: Container(
                                     width: 300,
                                     child: TextFormField(
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         labelText: 'CPF',
                                         labelStyle: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 243, 243, 243)),
+                                          color: Color.fromARGB(
+                                              255, 243, 243, 243),
+                                        ),
                                         enabledBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
                                                 color: Color.fromARGB(
                                                     255, 163, 120, 0))),
                                       ),
+                                      inputFormatters: [
+                                        FilteringTextInputFormatter.digitsOnly,
+                                        CpfInputFormatter()
+                                      ],
                                       style: const TextStyle(
                                           color: Color.fromARGB(
                                               255, 255, 255, 255)),
@@ -77,7 +78,7 @@ class LoginPage extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.only(top: 40),
                                   child: ElevatedButton(
-                                    child: Text('COMECAR',
+                                    child: const Text('COMECAR',
                                         style: TextStyle(
                                             fontSize: 20,
                                             fontFamily: 'awesomeLathusca')),
@@ -93,7 +94,7 @@ class LoginPage extends StatelessWidget {
                                       Navigator.of(context).push(
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  StoryPage()));
+                                                  const StoryPage()));
                                     },
                                   ),
                                 ),
@@ -103,8 +104,8 @@ class LoginPage extends StatelessWidget {
                         )),
                     Image.asset(
                       "assets/images/logo1.png",
-                      width: 170,
-                      height: 170,
+                      width: MediaQuery.of(context).size.width * 0.15,
+                      height: MediaQuery.of(context).size.height * 0.15,
                     ),
                   ],
                 ),

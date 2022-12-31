@@ -1,4 +1,4 @@
-import 'package:banquete_do_monarca/pages/Home/home_page.dart';
+import 'package:banquete_do_monarca/pages/MenusLaterais/home_page.dart';
 import 'package:flutter/material.dart';
 
 class StoryPage extends StatelessWidget {
@@ -11,6 +11,8 @@ class StoryPage extends StatelessWidget {
         body: LayoutBuilder(
           builder: (context, constraint) {
             return Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
@@ -24,7 +26,7 @@ class StoryPage extends StatelessWidget {
       ),
       onTap: () {
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => HomePage()));
+            .push(MaterialPageRoute(builder: (context) => const HomePage()));
       },
     );
   }
