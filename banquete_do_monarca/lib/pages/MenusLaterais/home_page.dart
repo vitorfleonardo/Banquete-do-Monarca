@@ -1,7 +1,5 @@
 //import 'dart:html';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-
 import '../../components.dart';
 
 class HomePage extends StatefulWidget {
@@ -38,37 +36,147 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraint) {
-          return Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  "assets/images/background-madeira.png",
-                ),
-                fit: BoxFit.fill,
-              ),
-            ),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    MenuLateral(),
-                    Column(
-                      children: [
-                        barraDestaques(imageSliders: imageSliders),
-                        // Container(
-                        //   width: 100,
-                        //   height: 100,
-                        //   decoration: const BoxDecoration(
-                        //     color: Color.fromARGB(255, 255, 255, 255),
-                        //   ),
-                        // )
-                      ],
+          return Stack(
+            children: <Widget>[
+              Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      "assets/images/background-madeira.png",
                     ),
-                  ],
+                    fit: BoxFit.fill,
+                  ),
                 ),
-              ],
-            ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.13,
+                    height: MediaQuery.of(context).size.height * 0.11,
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 50, 91, 124),
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      MenuLateral(),
+                      Column(
+                        children: [
+                          barraDestaques(imageSliders: imageSliders),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  botaoAdicionar(context),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  GestureDetector(
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.667,
+                        left: MediaQuery.of(context).size.width * 0.155,
+                      ),
+                      width: MediaQuery.of(context).size.width * 0.14,
+                      height: MediaQuery.of(context).size.height * 0.22,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/burgers/primeiroPP-normal.png",
+                          ),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.667,
+                        left: MediaQuery.of(context).size.width * 0.03,
+                      ),
+                      width: MediaQuery.of(context).size.width * 0.14,
+                      height: MediaQuery.of(context).size.height * 0.22,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/burgers/segundoPP-normal.png",
+                          ),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.667,
+                        left: MediaQuery.of(context).size.width * 0.03,
+                      ),
+                      width: MediaQuery.of(context).size.width * 0.14,
+                      height: MediaQuery.of(context).size.height * 0.22,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/burgers/terceiroPP-normal.png",
+                          ),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.667,
+                        left: MediaQuery.of(context).size.width * 0.03,
+                      ),
+                      width: MediaQuery.of(context).size.width * 0.14,
+                      height: MediaQuery.of(context).size.height * 0.22,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/burgers/quartoPP-normal.png",
+                          ),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.667,
+                        left: MediaQuery.of(context).size.width * 0.03,
+                      ),
+                      width: MediaQuery.of(context).size.width * 0.14,
+                      height: MediaQuery.of(context).size.height * 0.22,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/burgers/quintoPP-normal.png",
+                          ),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
           );
         },
       ),
