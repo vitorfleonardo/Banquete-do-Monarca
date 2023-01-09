@@ -10,7 +10,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool isImage = false;
+  bool isImage1 = false;
+  bool isImage2 = false;
+  bool isImage3 = false;
+  bool isImage4 = false;
+  bool isImage5 = false;
   @override
   Widget build(BuildContext context) {
     final List<String> imgList = [
@@ -22,6 +26,14 @@ class _HomePageState extends State<HomePage> {
     ];
     String primeiro = "assets/burgers/primeiroPP-normal.png";
     String primeiroSelecionado = "assets/burgers/primeiroPP-selecionado.png";
+    String segundo = "assets/burgers/segundoPP-normal.png";
+    String segundoSelecionado = "assets/burgers/segundoPP-selecionado.png";
+    String terceiro = "assets/burgers/terceiroPP-normal.png";
+    String terceiroSelecionado = "assets/burgers/terceiroPP-selecionado.png";
+    String quarto = "assets/burgers/quartoPP-normal.png";
+    String quartoSelecionado = "assets/burgers/quartoPP-selecionado.png";
+    String quinto = "assets/burgers/quintoPP-normal.png";
+    String quintoSelecionado = "assets/burgers/quintoPP-selecionado.png";
     final List<Widget> imageSliders = imgList
         .map(
           (item) => Container(
@@ -95,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       width: MediaQuery.of(context).size.width * 0.14,
                       height: MediaQuery.of(context).size.height * 0.22,
-                      child: isImage == false
+                      child: isImage1 == false
                           ? Image.asset(
                               primeiro,
                               fit: BoxFit.fill,
@@ -107,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     onTap: () {
                       setState(() {
-                        isImage = !isImage;
+                        isImage1 = !isImage1;
                       });
                     },
                   ),

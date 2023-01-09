@@ -15,20 +15,130 @@ class _CardapioPageState extends State<CardapioPage> {
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraint) {
-          return Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  "assets/images/background-madeira.png",
+          return Stack(
+            children: <Widget>[
+              Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      "assets/images/background-madeira.png",
+                    ),
+                    fit: BoxFit.fill,
+                  ),
                 ),
-                fit: BoxFit.fill,
               ),
-            ),
-            child: Row(
-              children: [
-                MenuLateral(),
-              ],
-            ),
+              Column(
+                children: [
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [MenuLateral()])
+                ],
+              ),
+              SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.125,
+                        left: MediaQuery.of(context).size.height * 0.400,
+                      ),
+                      width: MediaQuery.of(context).size.width * 0.75,
+                      height: MediaQuery.of(context).size.height * 0.50,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage("assets/imagens_cardapio/6.png"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      child: Row(children: [
+                        GestureDetector(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height * 0.27,
+                              left: MediaQuery.of(context).size.width * 0.52,
+                            ),
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            child: Image.asset(
+                              "assets/imagens_cardapio/11.png",
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                      ]),
+                    ),
+
+                    GestureDetector(
+                        child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                          margin: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.height * 0.400,
+                          ),
+                          width: MediaQuery.of(context).size.width * 0.75,
+                          height: MediaQuery.of(context).size.height * 0.50,
+                          decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      "assets/imagens_cardapio/9.png")))),
+                    )),
+                    // GestureDetector(
+                    //     child: Container(
+                    //   child: Container(
+                    //       margin: EdgeInsets.only(
+                    //         top: MediaQuery.of(context).size.height * 0.300,
+                    //         left: MediaQuery.of(context).size.height * 400,
+                    //       ),
+                    //       width: MediaQuery.of(context).size.width * 0.20,
+                    //       height: MediaQuery.of(context).size.height * 0.20,
+                    //       decoration: const BoxDecoration(
+                    //           image: DecorationImage(
+                    //               image: AssetImage("assets/imagens_cardapio/7.png")))),
+                    // )),
+                    // GestureDetector(
+                    //     child: Container(
+                    //   child: Container(
+                    //       margin: EdgeInsets.only(
+                    //         top: MediaQuery.of(context).size.height * 0.300,
+                    //         left: MediaQuery.of(context).size.height * 400,
+                    //       ),
+                    //       width: MediaQuery.of(context).size.width * 0.20,
+                    //       height: MediaQuery.of(context).size.height * 0.20,
+                    //       decoration: const BoxDecoration(
+                    //           image: DecorationImage(
+                    //               image: AssetImage("assets/imagens_cardapio/8.png")))),
+                    // )),
+                    // GestureDetector(
+                    //     child: Container(
+                    //   child: Container(
+                    //       margin: EdgeInsets.only(
+                    //         top: MediaQuery.of(context).size.height * 0.300,
+                    //         left: MediaQuery.of(context).size.height * 400,
+                    //       ),
+                    //       width: MediaQuery.of(context).size.width * 0.20,
+                    //       height: MediaQuery.of(context).size.height * 0.20,
+                    //       decoration: const BoxDecoration(
+                    //           image: DecorationImage(
+                    //               image: AssetImage("assets/imagens_cardapio/10.png")))),
+                    // )),
+                    // GestureDetector(
+                    //     child: Container(
+                    //   child: Container(
+                    //       margin: EdgeInsets.only(
+                    //         top: MediaQuery.of(context).size.height * 0.300,
+                    //         left: MediaQuery.of(context).size.height * 400,
+                    //       ),
+                    //       width: MediaQuery.of(context).size.width * 0.20,
+                    //       height: MediaQuery.of(context).size.height * 0.20,
+                    //       decoration: const BoxDecoration(
+                    //           image: DecorationImage(
+                    //               image: AssetImage("assets/imagens_cardapio/5.png")))),
+                    // )),
+                  ],
+                ),
+              ),
+            ],
           );
         },
       ),
