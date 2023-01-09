@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isImage = false;
   @override
   Widget build(BuildContext context) {
     final List<String> imgList = [
@@ -19,6 +20,8 @@ class _HomePageState extends State<HomePage> {
       "assets/posters/quarto-GG.png",
       "assets/posters/quinto-GG.png",
     ];
+    String primeiro = "assets/burgers/primeiroPP-normal.png";
+    String primeiroSelecionado = "assets/burgers/primeiroPP-selecionado.png";
     final List<Widget> imageSliders = imgList
         .map(
           (item) => Container(
@@ -92,14 +95,32 @@ class _HomePageState extends State<HomePage> {
                       ),
                       width: MediaQuery.of(context).size.width * 0.14,
                       height: MediaQuery.of(context).size.height * 0.22,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/burgers/primeiroPP-normal.png",
-                          ),
-                          fit: BoxFit.fill,
-                        ),
+                      child: isImage == false
+                          ? Image.asset(
+                              primeiro,
+                              fit: BoxFit.fill,
+                            )
+                          : Image.asset(
+                              primeiroSelecionado,
+                              fit: BoxFit.fill,
+                            ),
+                    ),
+                    onTap: () {
+                      setState(() {
+                        isImage = !isImage;
+                      });
+                    },
+                  ),
+                  GestureDetector(
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.667,
+                        left: MediaQuery.of(context).size.width * 0.03,
                       ),
+                      width: MediaQuery.of(context).size.width * 0.14,
+                      height: MediaQuery.of(context).size.height * 0.22,
+                      child: Image.asset("assets/burgers/segundoPP-normal.png",
+                          fit: BoxFit.fill),
                     ),
                   ),
                   GestureDetector(
@@ -110,14 +131,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                       width: MediaQuery.of(context).size.width * 0.14,
                       height: MediaQuery.of(context).size.height * 0.22,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/burgers/segundoPP-normal.png",
-                          ),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
+                      child: Image.asset("assets/burgers/terceiroPP-normal.png",
+                          fit: BoxFit.fill),
                     ),
                   ),
                   GestureDetector(
@@ -128,14 +143,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                       width: MediaQuery.of(context).size.width * 0.14,
                       height: MediaQuery.of(context).size.height * 0.22,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/burgers/terceiroPP-normal.png",
-                          ),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
+                      child: Image.asset("assets/burgers/quartoPP-normal.png",
+                          fit: BoxFit.fill),
                     ),
                   ),
                   GestureDetector(
@@ -146,32 +155,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                       width: MediaQuery.of(context).size.width * 0.14,
                       height: MediaQuery.of(context).size.height * 0.22,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/burgers/quartoPP-normal.png",
-                          ),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.667,
-                        left: MediaQuery.of(context).size.width * 0.03,
-                      ),
-                      width: MediaQuery.of(context).size.width * 0.14,
-                      height: MediaQuery.of(context).size.height * 0.22,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/burgers/quintoPP-normal.png",
-                          ),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
+                      child: Image.asset("assets/burgers/quintoPP-normal.png",
+                          fit: BoxFit.fill),
                     ),
                   ),
                 ],
