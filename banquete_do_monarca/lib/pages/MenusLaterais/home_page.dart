@@ -131,9 +131,21 @@ class _HomePageState extends State<HomePage> {
                       ),
                       width: MediaQuery.of(context).size.width * 0.14,
                       height: MediaQuery.of(context).size.height * 0.22,
-                      child: Image.asset("assets/burgers/segundoPP-normal.png",
-                          fit: BoxFit.fill),
+                      child: isImage2 == false
+                          ? Image.asset(
+                              segundo,
+                              fit: BoxFit.fill,
+                            )
+                          : Image.asset(
+                              segundoSelecionado,
+                              fit: BoxFit.fill,
+                            ),
                     ),
+                    onTap: () {
+                      setState(() {
+                        isImage2 = !isImage2;
+                      });
+                    },
                   ),
                   GestureDetector(
                     child: Container(
@@ -143,9 +155,21 @@ class _HomePageState extends State<HomePage> {
                       ),
                       width: MediaQuery.of(context).size.width * 0.14,
                       height: MediaQuery.of(context).size.height * 0.22,
-                      child: Image.asset("assets/burgers/terceiroPP-normal.png",
-                          fit: BoxFit.fill),
+                      child: isImage3 == false
+                          ? Image.asset(
+                              terceiro,
+                              fit: BoxFit.fill,
+                            )
+                          : Image.asset(
+                              terceiroSelecionado,
+                              fit: BoxFit.fill,
+                            ),
                     ),
+                    onTap: () {
+                      setState(() {
+                        isImage3 = !isImage3;
+                      });
+                    },
                   ),
                   GestureDetector(
                     child: Container(
@@ -155,9 +179,21 @@ class _HomePageState extends State<HomePage> {
                       ),
                       width: MediaQuery.of(context).size.width * 0.14,
                       height: MediaQuery.of(context).size.height * 0.22,
-                      child: Image.asset("assets/burgers/quartoPP-normal.png",
-                          fit: BoxFit.fill),
+                      child: isImage4 == false
+                          ? Image.asset(
+                              quarto,
+                              fit: BoxFit.fill,
+                            )
+                          : Image.asset(
+                              quartoSelecionado,
+                              fit: BoxFit.fill,
+                            ),
                     ),
+                    onTap: () {
+                      setState(() {
+                        isImage4 = !isImage4;
+                      });
+                    },
                   ),
                   GestureDetector(
                     child: Container(
@@ -167,9 +203,21 @@ class _HomePageState extends State<HomePage> {
                       ),
                       width: MediaQuery.of(context).size.width * 0.14,
                       height: MediaQuery.of(context).size.height * 0.22,
-                      child: Image.asset("assets/burgers/quintoPP-normal.png",
-                          fit: BoxFit.fill),
+                      child: isImage5 == false
+                          ? Image.asset(
+                              quinto,
+                              fit: BoxFit.fill,
+                            )
+                          : Image.asset(
+                              quintoSelecionado,
+                              fit: BoxFit.fill,
+                            ),
                     ),
+                    onTap: () {
+                      setState(() {
+                        isImage5 = !isImage5;
+                      });
+                    },
                   ),
                 ],
               )

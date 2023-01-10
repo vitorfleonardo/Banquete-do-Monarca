@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme:
             ColorScheme.fromSwatch().copyWith(secondary: AppColors.secondary),
       ),
-      home: const CardapioPage(),
+      home: const LoginPage(),
     );
   }
 }

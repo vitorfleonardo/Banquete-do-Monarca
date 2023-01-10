@@ -14,12 +14,12 @@ class StoryPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(
-                      "assets/images/Storytelling.jpg",
-                    ),
-                    fit: BoxFit.cover),
-              ),
+                  image: DecorationImage(
+                image: AssetImage(
+                  "assets/images/Storytelling.jpeg",
+                ),
+                fit: BoxFit.fill,
+              )),
             );
           },
         ),
