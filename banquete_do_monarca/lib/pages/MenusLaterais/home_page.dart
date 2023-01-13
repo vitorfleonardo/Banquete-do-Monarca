@@ -1,6 +1,7 @@
 //import 'dart:html';
 import 'package:flutter/material.dart';
 import '../../components.dart';
+import 'package:banquete_do_monarca/core/app_lists.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,6 +11,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  void _openEndDrawer() {
+    _scaffoldKey.currentState!.openEndDrawer();
+  }
+
   bool isImage1 = false;
   bool isImage2 = false;
   bool isImage3 = false;
@@ -17,23 +23,6 @@ class _HomePageState extends State<HomePage> {
   bool isImage5 = false;
   @override
   Widget build(BuildContext context) {
-    final List<String> imgList = [
-      "assets/posters/primeiro-GG.png",
-      "assets/posters/segundo-GG.png",
-      "assets/posters/terceiro-GG.png",
-      "assets/posters/quarto-GG.png",
-      "assets/posters/quinto-GG.png",
-    ];
-    String primeiro = "assets/burgers/primeiroPP-normal.png";
-    String primeiroSelecionado = "assets/burgers/primeiroPP-selecionado.png";
-    String segundo = "assets/burgers/segundoPP-normal.png";
-    String segundoSelecionado = "assets/burgers/segundoPP-selecionado.png";
-    String terceiro = "assets/burgers/terceiroPP-normal.png";
-    String terceiroSelecionado = "assets/burgers/terceiroPP-selecionado.png";
-    String quarto = "assets/burgers/quartoPP-normal.png";
-    String quartoSelecionado = "assets/burgers/quartoPP-selecionado.png";
-    String quinto = "assets/burgers/quintoPP-normal.png";
-    String quintoSelecionado = "assets/burgers/quintoPP-selecionado.png";
     final List<Widget> imageSliders = imgList
         .map(
           (item) => Container(
@@ -49,6 +38,8 @@ class _HomePageState extends State<HomePage> {
         )
         .toList();
     return Scaffold(
+      key: _scaffoldKey,
+      endDrawer: const Carrinho(),
       body: LayoutBuilder(
         builder: (context, constraint) {
           return Stack(
@@ -66,13 +57,16 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.13,
-                    height: MediaQuery.of(context).size.height * 0.11,
-                    decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 50, 91, 124),
+                  GestureDetector(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.13,
+                      height: MediaQuery.of(context).size.height * 0.11,
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 228, 228, 228),
+                      ),
                     ),
-                  )
+                    onTap: () => _openEndDrawer(),
+                  ),
                 ],
               ),
               Column(
