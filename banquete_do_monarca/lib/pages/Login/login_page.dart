@@ -2,9 +2,11 @@ import 'package:brasil_fields/brasil_fields.dart';
 import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  LoginPage({Key? key}) : super(key: key);
+  final TextEditingController _cpf = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,51 +52,83 @@ class LoginPage extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 10),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: 300,
                                     child: TextFormField(
-                                      decoration: const InputDecoration(
-                                        labelText: 'CPF',
-                                        labelStyle: TextStyle(
-                                          color: Color.fromARGB(
-                                              255, 243, 243, 243),
+                                        controller: _cpf,
+                                        decoration: const InputDecoration(
+                                          labelText: 'CPF',
+                                          labelStyle: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 243, 243, 243),
+                                          ),
+                                          enabledBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Color.fromARGB(
+                                                      255, 163, 120, 0))),
                                         ),
-                                        enabledBorder: UnderlineInputBorder(
-                                            borderSide: BorderSide(
-                                                color: Color.fromARGB(
-                                                    255, 163, 120, 0))),
-                                      ),
-                                      inputFormatters: [
-                                        FilteringTextInputFormatter.digitsOnly,
-                                        CpfInputFormatter()
-                                      ],
-                                      style: const TextStyle(
-                                          color: Color.fromARGB(
-                                              255, 255, 255, 255)),
-                                      keyboardType: TextInputType.number,
-                                    ),
+                                        inputFormatters: [
+                                          FilteringTextInputFormatter
+                                              .digitsOnly,
+                                          CpfInputFormatter()
+                                        ],
+                                        style: const TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 255, 255, 255)),
+                                        keyboardType: TextInputType.number,
+                                        validator: (value) {
+                                          if (value == null &&
+                                              GetUtils.isCpf(value!)) {
+                                            return 'CPF inválido';
+                                          }
+                                          return null;
+                                        }),
                                   ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 40),
                                   child: ElevatedButton(
+                                    // ignore: sort_child_properties_last
                                     child: const Text('COMECAR',
                                         style: TextStyle(
                                             fontSize: 20,
                                             fontFamily: 'awesomeLathusca')),
                                     style: ElevatedButton.styleFrom(
-                                      primary: Color.fromARGB(255, 107, 93, 67),
-                                      onPrimary:
-                                          Color.fromARGB(255, 255, 255, 255),
+                                      foregroundColor: const Color.fromARGB(
+                                          255, 255, 255, 255),
+                                      backgroundColor: const Color.fromARGB(
+                                          255, 107, 93, 67),
                                       shape: const BeveledRectangleBorder(
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(5))),
                                     ),
                                     onPressed: () {
-                                      Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const StoryPage()));
+                                      String cpf = _cpf.text;
+
+                                      if (GetUtils.isCpf(cpf)) {
+                                        Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const StoryPage()));
+                                      } else {
+                                        showDialog<String>(
+                                          context: context,
+                                          builder: (BuildContext context) =>
+                                              AlertDialog(
+                                            title:
+                                                const Text('Ocorreu um erro!'),
+                                            content: const Text(
+                                                'Seu CPF é inválido tente novamente!'),
+                                            actions: <Widget>[
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    context, 'OK'),
+                                                child: const Text('OK'),
+                                              ),
+                                            ],
+                                          ),
+                                        );
+                                      }
                                     },
                                   ),
                                 ),
@@ -117,3 +151,16 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
+
+
+// TextEditingController _passwordController = TextEditingController();
+// if(condition)
+// {
+//  //success call
+// }
+// else
+// {
+// setState((){
+//   _passwordController.text="Password Does not match
+//  });
+// }

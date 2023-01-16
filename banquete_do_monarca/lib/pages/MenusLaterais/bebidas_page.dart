@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../components.dart';
+import '../../components/components.dart';
 
 class BebidasPage extends StatefulWidget {
   const BebidasPage({Key? key}) : super(key: key);

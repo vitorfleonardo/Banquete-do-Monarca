@@ -16,12 +16,9 @@ String quartoSelecionado = "assets/burgers/quartoPP-selecionado.png";
 String quinto = "assets/burgers/quintoPP-normal.png";
 String quintoSelecionado = "assets/burgers/quintoPP-selecionado.png";
 
-List<Map<String, Object>> produtos = [
-  {"alimento": "Osgard", "preco": 29.90},
-  {"alimento": "Shalom", "preco": 29.90},
-  {"alimento": "Selva", "preco": 29.90},
-  {"alimento": "Brhomos", "preco": 29.90},
-  {"alimento": "Pavard", "preco": 29.90},
-  {"alimento": "Tatatá", "preco": 29.90},
-  {"alimento": "Osgard", "preco": 29.90},
-];
+int osgard = 0;
+int shalom = 0;
+int selva = 0;
+int brhomos = 0;
+int pavard = 0;
+int tatata = 0;
