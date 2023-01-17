@@ -179,8 +179,9 @@ GestureDetector botaoAdicionar(BuildContext context) {
       ),
     ),
     onTap: () {
+      String pedido;
       if (osgard == 1) {
-        const Carrinho(asset: "assets/imagens_cardapio/osgard.png");
+        pedido = "assets/imagens_carrinho/osgard.png";
       }
     },
   );
@@ -245,7 +246,7 @@ class Carrinho extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width * 0.2),
+                        left: MediaQuery.of(context).size.width * 0.26),
                     // ignore: prefer_const_constructors
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
@@ -265,8 +266,13 @@ class Carrinho extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: MediaQuery.of(context).size.height * 0.13,
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.15,
+                width: MediaQuery.of(context).size.width * 0.48,
+                child: Image.asset(
+                  asset,
+                  fit: BoxFit.cover,
+                ),
               ),
             )
           ],
