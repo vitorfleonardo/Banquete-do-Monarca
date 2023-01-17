@@ -267,7 +267,6 @@ class Carrinho extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.13,
-                decoration: const BoxDecoration(),
               ),
             )
           ],
