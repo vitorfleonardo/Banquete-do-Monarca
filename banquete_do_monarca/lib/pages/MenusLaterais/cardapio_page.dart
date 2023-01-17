@@ -27,13 +27,6 @@ class _CardapioPageState extends State<CardapioPage> {
                   ),
                 ),
               ),
-              Column(
-                children: [
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [MenuLateral()])
-                ],
-              ),
               SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -226,7 +219,19 @@ class _CardapioPageState extends State<CardapioPage> {
                   ],
                 ),
               ),
-            ],
+              Column(
+                children: [
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [MenuLateral()])
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  botaoAdicionar(context),
+                ],
+          )],
           );
         },
       ),

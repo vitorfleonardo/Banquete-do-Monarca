@@ -27,13 +27,6 @@ class _BebidasPageState extends State<BebidasPage> {
                   ),
                 ),
               ),
-              Column(
-                children: [
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [MenuLateral()])
-                ],
-              ),
               SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -132,6 +125,19 @@ class _BebidasPageState extends State<BebidasPage> {
                     )),
                   ],
                 ),
+              ),
+              Column(
+                children: [
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [MenuLateral()])
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  botaoAdicionar(context),
+                ],
               ),
             ],
           );
