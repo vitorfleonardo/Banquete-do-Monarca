@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../components.dart';
+import '../../components/components.dart';
 
 class MercadoPage extends StatefulWidget {
   const MercadoPage({Key? key}) : super(key: key);

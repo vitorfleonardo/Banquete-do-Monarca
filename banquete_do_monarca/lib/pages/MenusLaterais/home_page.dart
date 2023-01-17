@@ -1,6 +1,6 @@
 //import 'dart:html';
 import 'package:flutter/material.dart';
-import '../../components.dart';
+import '../../components/components.dart';
 import 'package:banquete_do_monarca/core/app_lists.dart';
 
 class HomePage extends StatefulWidget {
@@ -39,7 +39,9 @@ class _HomePageState extends State<HomePage> {
         .toList();
     return Scaffold(
       key: _scaffoldKey,
-      endDrawer: const Carrinho(),
+      endDrawer: const Carrinho(
+        asset: "",
+      ),
       body: LayoutBuilder(
         builder: (context, constraint) {
           return Stack(
@@ -85,12 +87,6 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  botaoAdicionar(context),
-                ],
-              ),
-              Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   GestureDetector(
@@ -115,6 +111,11 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         isImage1 = !isImage1;
                       });
+                      if (isImage1 == true) {
+                        osgard = 1;
+                      } else {
+                        osgard = 0;
+                      }
                     },
                   ),
                   GestureDetector(
@@ -139,6 +140,11 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         isImage2 = !isImage2;
                       });
+                      if (isImage2 == true) {
+                        shalom = 1;
+                      } else {
+                        shalom = 0;
+                      }
                     },
                   ),
                   GestureDetector(
@@ -163,6 +169,11 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         isImage3 = !isImage3;
                       });
+                      if (isImage3 == true) {
+                        selva = 1;
+                      } else {
+                        selva = 0;
+                      }
                     },
                   ),
                   GestureDetector(
@@ -187,6 +198,11 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         isImage4 = !isImage4;
                       });
+                      if (isImage4 == true) {
+                        brhomos = 1;
+                      } else {
+                        brhomos = 0;
+                      }
                     },
                   ),
                   GestureDetector(
@@ -211,10 +227,21 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         isImage5 = !isImage5;
                       });
+                      if (isImage5 == true) {
+                        pavard = 1;
+                      } else {
+                        pavard = 0;
+                      }
                     },
                   ),
                 ],
-              )
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  botaoAdicionar(context),
+                ],
+              ),
             ],
           );
         },

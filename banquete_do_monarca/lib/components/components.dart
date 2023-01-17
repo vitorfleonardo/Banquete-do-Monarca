@@ -1,3 +1,4 @@
+import 'package:banquete_do_monarca/core/app_lists.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/home_page.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/bebidas_page.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/cardapio_page.dart';
@@ -6,7 +7,7 @@ import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-import 'core/app_colors.dart';
+import '../core/app_colors.dart';
 
 class OpcoesMenu extends StatelessWidget {
   final BuildContext context;
@@ -177,12 +178,20 @@ GestureDetector botaoAdicionar(BuildContext context) {
         ),
       ),
     ),
+    onTap: () {
+      String pedido;
+      if (osgard == 1) {
+        pedido = "assets/imagens_carrinho/osgard.png";
+      }
+    },
   );
 }
 
 class Carrinho extends StatelessWidget {
+  final String asset;
   const Carrinho({
     Key? key,
+    required this.asset,
   }) : super(key: key);
 
   @override
@@ -196,6 +205,7 @@ class Carrinho extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.5,
               height: MediaQuery.of(context).size.height * 0.14,
               child: const DrawerHeader(
+                // ignore: sort_child_properties_last
                 child: Center(
                   child: FittedBox(
                     fit: BoxFit.fitWidth,
@@ -222,7 +232,7 @@ class Carrinho extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width * 0.01),
-                    child: FittedBox(
+                    child: const FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
                         "Item",
@@ -236,11 +246,13 @@ class Carrinho extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width * 0.2),
+                        left: MediaQuery.of(context).size.width * 0.26),
+                    // ignore: prefer_const_constructors
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
-                      child: Text(
+                      child: const Text(
                         "Qtde",
+                        // ignore: prefer_const_constructors
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 15,
@@ -250,6 +262,17 @@ class Carrinho extends StatelessWidget {
                     ),
                   )
                 ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.15,
+                width: MediaQuery.of(context).size.width * 0.48,
+                child: Image.asset(
+                  asset,
+                  fit: BoxFit.cover,
+                ),
               ),
             )
           ],
