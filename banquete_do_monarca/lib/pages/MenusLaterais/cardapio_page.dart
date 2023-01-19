@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
 import '../../components/components.dart';
 
 class CardapioPage extends StatefulWidget {
@@ -58,6 +58,7 @@ class _CardapioPageState extends State<CardapioPage> {
                               fit: BoxFit.contain,
                             ),
                           ),
+                          onTap: () {},
                         ),
                       ]),
                     ),
@@ -231,7 +232,8 @@ class _CardapioPageState extends State<CardapioPage> {
                 children: [
                   botaoAdicionar(context),
                 ],
-          )],
+              )
+            ],
           );
         },
       ),
