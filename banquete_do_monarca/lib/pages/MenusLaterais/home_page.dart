@@ -21,6 +21,17 @@ class _HomePageState extends State<HomePage> {
   bool isImage3 = false;
   bool isImage4 = false;
   bool isImage5 = false;
+
+  limparSelecionados() {
+    setState(() {
+      isImage1 = false;
+      isImage2 = false;
+      isImage3 = false;
+      isImage4 = false;
+      isImage5 = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final List<Widget> imageSliders = imgList
@@ -37,6 +48,7 @@ class _HomePageState extends State<HomePage> {
           ),
         )
         .toList();
+
     return Scaffold(
       key: _scaffoldKey,
       endDrawer: const Carrinho(),
@@ -77,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                       MenuLateral(),
                       Column(
                         children: [
-                          barraDestaques(imageSliders: imageSliders),
+                          BarraDestaques(imageSliders: imageSliders),
                         ],
                       ),
                     ],
@@ -237,7 +249,12 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  botaoAdicionar(context),
+                  InkWell(
+                    child: botaoAdicionar(context),
+                    onTap: () {
+                      limparSelecionados();
+                    },
+                  ),
                 ],
               ),
             ],

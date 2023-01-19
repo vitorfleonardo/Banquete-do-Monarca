@@ -129,8 +129,8 @@ class MenuLateral extends StatelessWidget {
   }
 }
 
-class barraDestaques extends StatelessWidget {
-  const barraDestaques({
+class BarraDestaques extends StatelessWidget {
+  const BarraDestaques({
     Key? key,
     required this.imageSliders,
   }) : super(key: key);
@@ -157,33 +157,25 @@ class barraDestaques extends StatelessWidget {
   }
 }
 
-GestureDetector botaoAdicionar(BuildContext context) {
-  return GestureDetector(
-    child: Container(
-      margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.91),
-      width: MediaQuery.of(context).size.width * 0.15,
-      height: MediaQuery.of(context).size.height * 0.9,
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 255, 0, 0),
-      ),
-      child: const FittedBox(
-        child: Text(
-          "Adicionar",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'awesomeLathusca'),
-          maxLines: 1,
-        ),
+Container botaoAdicionar(BuildContext context) {
+  return Container(
+    margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.91),
+    width: MediaQuery.of(context).size.width * 0.15,
+    height: MediaQuery.of(context).size.height * 0.9,
+    decoration: const BoxDecoration(
+      color: Color.fromARGB(255, 255, 0, 0),
+    ),
+    child: const FittedBox(
+      child: Text(
+        "Adicionar",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'awesomeLathusca'),
+        maxLines: 1,
       ),
     ),
-    onTap: () {
-      String pedido;
-      if (osgard == 1) {
-        pedido = "assets/imagens_carrinho/osgard.png";
-      }
-    },
   );
 }
 
