@@ -188,10 +188,8 @@ GestureDetector botaoAdicionar(BuildContext context) {
 }
 
 class Carrinho extends StatelessWidget {
-  final String asset;
   const Carrinho({
     Key? key,
-    required this.asset,
   }) : super(key: key);
 
   @override
@@ -270,7 +268,7 @@ class Carrinho extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.15,
                 width: MediaQuery.of(context).size.width * 0.48,
                 child: Image.asset(
-                  asset,
+                  "assets/imagens_carrinho/osgard.png",
                   fit: BoxFit.cover,
                 ),
               ),

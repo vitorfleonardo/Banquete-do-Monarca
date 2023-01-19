@@ -38,12 +38,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   brasil_fields: ^1.9.0
   carousel_slider: ^4.2.1
-<<<<<<< HEAD
   http: ^0.13.5
-=======
   get: ^4.6.5
   provider: ^6.0.5
->>>>>>> f3be1ddad584a376b4dd5afb854b772a92c47f70
+
 
 dev_dependencies:
   flutter_test:

@@ -39,9 +39,7 @@ class _HomePageState extends State<HomePage> {
         .toList();
     return Scaffold(
       key: _scaffoldKey,
-      endDrawer: const Carrinho(
-        asset: "",
-      ),
+      endDrawer: const Carrinho(),
       body: LayoutBuilder(
         builder: (context, constraint) {
           return Stack(
