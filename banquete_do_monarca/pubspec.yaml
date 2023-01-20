@@ -74,6 +74,7 @@ flutter:
   - assets/imagens_cardapio/
   - assets/imagens_bebidas/
   - assets/imagens_carrinho/
+  - assets/imagens_mercado/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
