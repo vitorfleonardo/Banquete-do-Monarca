@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage> {
                       }
                     },
                   ),
-                  GestureDetector(
+                  InkWell(
                     child: Container(
                       margin: EdgeInsets.only(
                         top: MediaQuery.of(context).size.height * 0.667,
