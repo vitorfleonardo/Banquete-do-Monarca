@@ -15,21 +15,63 @@ class _MercadoPageState extends State<MercadoPage> {
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraint) {
-          return Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  "assets/images/background-madeira.png",
+          return Stack(children: <Widget>[
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    "assets/images/background-madeira.png",
+                  ),
+                  fit: BoxFit.fill,
                 ),
-                fit: BoxFit.fill,
               ),
             ),
-            child: Row(
-              children: [
-                MenuLateral(),
-              ],
-            ),
-          );
+            Container(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                  Container(
+                    margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * 0.125,
+                      left: MediaQuery.of(context).size.height * 0.100,
+                    ),
+                    width: MediaQuery.of(context).size.width * 0.95,
+                    height: MediaQuery.of(context).size.height * 0.90,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/imagens_mercado/background.png"),
+                        fit: BoxFit.fill,
+                      )
+                    ),
+                    // child: Row(children: [
+                    //         GestureDetector(
+                    //           child: Container(
+                    //             margin: EdgeInsets.only(
+                    //               top: MediaQuery.of(context).size.height * 0.27,
+                    //               left: MediaQuery.of(context).size.width * 0.52,
+                    //             ),
+                    //             width: MediaQuery.of(context).size.width * 0.2,
+                    //             height: MediaQuery.of(context).size.height *0.2,
+                    //             child: Image.asset(
+                    //               "assests/imagens_mercado/balao-fala.png",
+                    //             fit: BoxFit.fill,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ]
+                    //     )
+                        )
+                ])),
+            Container(
+              child: Column(
+                children: [
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [MenuLateral()])
+                ],
+              ),
+            )
+          ]);
         },
       ),
     );
