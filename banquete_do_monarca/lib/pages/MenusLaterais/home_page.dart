@@ -249,11 +249,15 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  InkWell(
-                    child: botaoAdicionar(context),
-                    onTap: () {
-                      limparSelecionados();
-                    },
+                  Container(
+                    margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.91),
+                    child: InkWell(
+                      child: botaoAdicionar(context),
+                      onTap: () {
+                        limparSelecionados();
+                      },
+                    ),
                   ),
                 ],
               ),

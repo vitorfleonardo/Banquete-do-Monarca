@@ -159,7 +159,6 @@ class BarraDestaques extends StatelessWidget {
 
 Container botaoAdicionar(BuildContext context) {
   return Container(
-    margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.91),
     width: MediaQuery.of(context).size.width * 0.15,
     height: MediaQuery.of(context).size.height * 0.9,
     decoration: const BoxDecoration(
