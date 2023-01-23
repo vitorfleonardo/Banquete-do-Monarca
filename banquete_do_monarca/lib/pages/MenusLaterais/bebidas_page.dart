@@ -40,7 +40,7 @@ class _BebidasPageState extends State<BebidasPage> {
                       height: MediaQuery.of(context).size.height * 0.50,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage("assets/imagens_bebidas/bebida_1.png"),
+                          image: AssetImage("assets/imagens_bebidas/Hortelaco.png"),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -54,7 +54,7 @@ class _BebidasPageState extends State<BebidasPage> {
                             width: MediaQuery.of(context).size.width * 0.2,
                             height: MediaQuery.of(context).size.height * 0.2,
                             child: Image.asset(
-                              "assets/imagens_cardapio/11.png",
+                              "assets/imagens_cardapio/Botao_Adicionar.png",
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -73,7 +73,7 @@ class _BebidasPageState extends State<BebidasPage> {
                         decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage(
-                                    "assets/imagens_bebidas/bebida_2.png"))),
+                                    "assets/imagens_bebidas/Jatoman.png"))),
                         child: Row(children: [
                           GestureDetector(
                             child: Container(
@@ -84,7 +84,7 @@ class _BebidasPageState extends State<BebidasPage> {
                               width: MediaQuery.of(context).size.width * 0.2,
                               height: MediaQuery.of(context).size.height * 0.2,
                               child: Image.asset(
-                                "assets/imagens_cardapio/11.png",
+                                "assets/imagens_cardapio/Botao_Adicionar.png",
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -104,7 +104,7 @@ class _BebidasPageState extends State<BebidasPage> {
                         decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage(
-                                    "assets/imagens_bebidas/bebida_3.png"))),
+                                    "assets/imagens_bebidas/Oriumm.png"))),
                         child: Row(children: [
                           GestureDetector(
                             child: Container(
@@ -115,7 +115,7 @@ class _BebidasPageState extends State<BebidasPage> {
                               width: MediaQuery.of(context).size.width * 0.2,
                               height: MediaQuery.of(context).size.height * 0.2,
                               child: Image.asset(
-                                "assets/imagens_cardapio/11.png",
+                                "assets/imagens_cardapio/Botao_Adicionar.png",
                                 fit: BoxFit.contain,
                               ),
                             ),
