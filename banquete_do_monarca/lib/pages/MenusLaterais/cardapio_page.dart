@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
 import '../../components/components.dart';
 
 class CardapioPage extends StatefulWidget {
@@ -22,7 +21,6 @@ class _CardapioPageState extends State<CardapioPage> {
                   image: DecorationImage(
                     image: AssetImage(
                       "assets/images/background-madeira.png",
-    
                     ),
                     fit: BoxFit.fill,
                   ),
@@ -41,7 +39,8 @@ class _CardapioPageState extends State<CardapioPage> {
                       height: MediaQuery.of(context).size.height * 0.50,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage("assets/imagens_cardapio/Pavard.png"),
+                          image:
+                              AssetImage("assets/imagens_cardapio/Pavard.png"),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -228,12 +227,6 @@ class _CardapioPageState extends State<CardapioPage> {
                       children: [MenuLateral()])
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  botaoAdicionar(context),
-                ],
-              )
             ],
           );
         },

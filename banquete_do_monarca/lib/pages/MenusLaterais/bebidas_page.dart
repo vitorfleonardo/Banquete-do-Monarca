@@ -10,7 +10,7 @@ class BebidasPage extends StatefulWidget {
 }
 
 class _BebidasPageState extends State<BebidasPage> {
- @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: LayoutBuilder(
@@ -40,7 +40,8 @@ class _BebidasPageState extends State<BebidasPage> {
                       height: MediaQuery.of(context).size.height * 0.50,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage("assets/imagens_bebidas/Hortelaco.png"),
+                          image: AssetImage(
+                              "assets/imagens_bebidas/Hortelaco.png"),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -131,12 +132,6 @@ class _BebidasPageState extends State<BebidasPage> {
                   Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [MenuLateral()])
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  botaoAdicionar(context),
                 ],
               ),
             ],
