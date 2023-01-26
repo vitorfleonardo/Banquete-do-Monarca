@@ -1,4 +1,3 @@
-import 'package:banquete_do_monarca/core/app_lists.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/home_page.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/bebidas_page.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/cardapio_page.dart';
@@ -100,7 +99,7 @@ class MenuLateral extends StatelessWidget {
               GestureDetector(
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: Container(
+                  child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: 50,
                     child: const FittedBox(
@@ -117,8 +116,8 @@ class MenuLateral extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => StoryPage()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const StoryPage()));
                 },
               ),
             ],
