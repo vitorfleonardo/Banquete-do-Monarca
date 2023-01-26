@@ -26,7 +26,7 @@ class _MercadoPageState extends State<MercadoPage> {
                 ),
               ),
             ),
-            Column(mainAxisAlignment: MainAxisAlignment.start, 
+            Column(mainAxisAlignment: MainAxisAlignment.center, 
             children: [
               Container(
                   margin: EdgeInsets.only(
@@ -44,8 +44,8 @@ class _MercadoPageState extends State<MercadoPage> {
                     GestureDetector(
                       child: Container(
                         margin: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.005,
-                          left: MediaQuery.of(context).size.width * 0.0005,
+                          top: MediaQuery.of(context).size.height * 0.006,
+                          right: MediaQuery.of(context).size.width * 0.1,
                         ),
                         width: MediaQuery.of(context).size.width * 0.4,
                         height: MediaQuery.of(context).size.height * 0.225,
@@ -58,11 +58,11 @@ class _MercadoPageState extends State<MercadoPage> {
                   GestureDetector(
                     child: Container(
                         margin: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.26,
-                          right: MediaQuery.of(context).size.width * 0.64,
+                          top: MediaQuery.of(context).size.height * 0.009,
+                          right: MediaQuery.of(context).size.width * 0.54,
                         ),
-                        width: MediaQuery.of(context).size.width * 0.2,
-                        height: MediaQuery.of(context).size.height * 0.4,
+                        width: MediaQuery.of(context).size.width * 0.38,
+                        height: MediaQuery.of(context).size.height * 0.65,
                         child: Image.asset(
                           "assets/imagens_mercado/mercador.png",
                           fit: BoxFit.fill,
@@ -79,7 +79,7 @@ class _MercadoPageState extends State<MercadoPage> {
                 Container(
                       margin: EdgeInsets.only(
                         top: MediaQuery.of(context).size.height * 0.35,
-                        left: MediaQuery.of(context).size.height * 0.625,
+                        left: MediaQuery.of(context).size.height * 0.975,
                       ),
                       width: MediaQuery.of(context).size.width * 0.25,
                       height: MediaQuery.of(context).size.height * 0.150,
@@ -94,7 +94,7 @@ class _MercadoPageState extends State<MercadoPage> {
                   child: Container(
                         margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.04,
-                          left: MediaQuery.of(context).size.height * 0.625,
+                          left: MediaQuery.of(context).size.height * 0.975,
                         ),
                         width: MediaQuery.of(context).size.width * 0.25,
                         height: MediaQuery.of(context).size.height * 0.20,
@@ -107,7 +107,7 @@ class _MercadoPageState extends State<MercadoPage> {
                   child: Container(                      
                         margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.005,
-                          left: MediaQuery.of(context).size.height * 0.625,
+                          left: MediaQuery.of(context).size.height * 0.975,
                         ),
                         width: MediaQuery.of(context).size.width * 0.25,
                         height: MediaQuery.of(context).size.height * 0.25,
@@ -117,51 +117,65 @@ class _MercadoPageState extends State<MercadoPage> {
                                     "assets/imagens_mercado/garrafinha.png"))))),        
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                      margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.32,
-                        left: MediaQuery.of(context).size.height * 0.999,
-                      ),
-                      width: MediaQuery.of(context).size.width * 0.2,
-                      height: MediaQuery.of(context).size.height * 0.2,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image:
-                              AssetImage("assets/imagens_mercado/troca.png"),
-                          fit: BoxFit.fill,
+                      child: Column(children: [
+                        GestureDetector(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height *0.32,
+                              left: MediaQuery.of(context).size.height * 1.35,
+                            ),
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image:
+                                    AssetImage("assets/imagens_mercado/troca.png"),
+                                fit: BoxFit.fill,
+                              )
+                            ),
+                          )
                         ),
-                      )),
-                GestureDetector(
-                  child: Container(
-                  //child: Padding(
-                      //padding: const EdgeInsets.all(8.0),
-                      //child: Container(
-                        margin: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.026,
-                          left: MediaQuery.of(context).size.height * 0.997,
+                        GestureDetector(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height *0.02,
+                              left: MediaQuery.of(context).size.height * 1.35,
+                            ),
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image:
+                                    AssetImage("assets/imagens_mercado/troca.png"),
+                                fit: BoxFit.fill,
+                              )
+                            ),
+                          )
                         ),
-                        width: MediaQuery.of(context).size.width * 0.2,
-                        height: MediaQuery.of(context).size.height * 0.20,
-                        decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    "assets/imagens_mercado/troca.png"))))
-                ),
-                GestureDetector(
-                  child: Container(                      
-                        margin: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.02,
-                          left: MediaQuery.of(context).size.height * 0.97,
+                        GestureDetector(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height *0.02,
+                              left: MediaQuery.of(context).size.height * 1.35,
+                            ),
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image:
+                                    AssetImage("assets/imagens_mercado/troca.png"),
+                                fit: BoxFit.fill,
+                              )
+                            ),
+                          )
                         ),
-                        width: MediaQuery.of(context).size.width * 0.2,
-                        height: MediaQuery.of(context).size.height * 0.2,
-                        decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    "assets/imagens_mercado/troca.png"))))),        
+                      ]))
+                
+                        
               ],
             ),
             Column(
