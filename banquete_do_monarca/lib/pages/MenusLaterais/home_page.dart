@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                 borderRadius: const BorderRadius.all(Radius.circular(5.0)),
                 child: Stack(
                   children: <Widget>[
-                    Image.network(item, fit: BoxFit.cover),
+                    Image.asset(item, fit: BoxFit.fill),
                   ],
                 )),
           ),
@@ -121,11 +121,6 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         isImage1 = !isImage1;
                       });
-                      if (isImage1 == true) {
-                        osgard = 1;
-                      } else {
-                        osgard = 0;
-                      }
                     },
                   ),
                   GestureDetector(
@@ -150,11 +145,6 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         isImage2 = !isImage2;
                       });
-                      if (isImage2 == true) {
-                        shalom = 1;
-                      } else {
-                        shalom = 0;
-                      }
                     },
                   ),
                   GestureDetector(
@@ -179,11 +169,6 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         isImage3 = !isImage3;
                       });
-                      if (isImage3 == true) {
-                        selva = 1;
-                      } else {
-                        selva = 0;
-                      }
                     },
                   ),
                   InkWell(
@@ -208,11 +193,6 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         isImage4 = !isImage4;
                       });
-                      if (isImage4 == true) {
-                        brhomos = 1;
-                      } else {
-                        brhomos = 0;
-                      }
                     },
                   ),
                   GestureDetector(
@@ -237,11 +217,6 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         isImage5 = !isImage5;
                       });
-                      if (isImage5 == true) {
-                        pavard = 1;
-                      } else {
-                        pavard = 0;
-                      }
                     },
                   ),
                 ],
