@@ -12,6 +12,6 @@ void main() async {
   FirebaseFirestore.instance
   .collection("cliente")
   .doc()
-  .set({'cpf': '056.809.411.58', 'pontos': '170'});
+  .set({'cpf': '056.809.411.58', 'pontos': '1235'});
 }
 
