@@ -3,8 +3,6 @@ import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:banquete_do_monarca/repository/consumer.dart';
-import 'package:http/http.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);

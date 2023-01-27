@@ -1,4 +1,3 @@
-import 'package:banquete_do_monarca/core/app_lists.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/home_page.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/bebidas_page.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/cardapio_page.dart';
@@ -6,6 +5,7 @@ import 'package:banquete_do_monarca/pages/MenusLaterais/mercado_page.dart';
 import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:banquete_do_monarca/core/app_lists.dart';
 
 import '../core/app_colors.dart';
 
@@ -100,7 +100,7 @@ class MenuLateral extends StatelessWidget {
               GestureDetector(
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: Container(
+                  child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: 50,
                     child: const FittedBox(
@@ -117,8 +117,8 @@ class MenuLateral extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => StoryPage()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const StoryPage()));
                 },
               ),
             ],
@@ -185,6 +185,11 @@ class Carrinho extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    late String pedido;
+    pedido = "";
+    if (osgard == 1) {
+      pedido = "assets/imagens_carrinho/osgard.png";
+    }
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.5,
       child: Drawer(
@@ -255,15 +260,28 @@ class Carrinho extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
+              child: Container(
                 height: MediaQuery.of(context).size.height * 0.15,
                 width: MediaQuery.of(context).size.width * 0.48,
-                child: Image.asset(
-                  "assets/imagens_carrinho/osgard.png",
-                  fit: BoxFit.cover,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(pedido), fit: BoxFit.cover),
+                ),
+                child: Center(
+                  child: Container(
+                    margin: EdgeInsets.only(
+                      right: MediaQuery.of(context).size.width * 0.44,
+                    ),
+                    height: MediaQuery.of(context).size.height * 0.09,
+                    width: MediaQuery.of(context).size.width * 0.059,
+                    child: const Icon(
+                      Icons.delete,
+                      color: Colors.grey,
+                    ),
+                  ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

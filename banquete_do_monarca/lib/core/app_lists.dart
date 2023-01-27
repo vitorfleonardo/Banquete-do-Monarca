@@ -17,8 +17,3 @@ String quinto = "assets/burgers/quintoPP-normal.png";
 String quintoSelecionado = "assets/burgers/quintoPP-selecionado.png";
 
 int osgard = 0;
-int shalom = 0;
-int selva = 0;
-int brhomos = 0;
-int pavard = 0;
-int tatata = 0;

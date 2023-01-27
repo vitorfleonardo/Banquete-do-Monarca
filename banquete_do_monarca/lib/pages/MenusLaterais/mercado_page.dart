@@ -26,50 +26,164 @@ class _MercadoPageState extends State<MercadoPage> {
                 ),
               ),
             ),
-            Container(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.125,
-                      left: MediaQuery.of(context).size.height * 0.100,
-                    ),
-                    width: MediaQuery.of(context).size.width * 0.95,
-                    height: MediaQuery.of(context).size.height * 0.90,
-                    decoration: const BoxDecoration(
+            Column(mainAxisAlignment: MainAxisAlignment.center, 
+            children: [
+              Container(
+                  margin: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.110,
+                    left: MediaQuery.of(context).size.width * 0.100,
+                  ),
+                  width: MediaQuery.of(context).size.width * 0.95,
+                  height: MediaQuery.of(context).size.height * 0.89,
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage("assets/imagens_mercado/background.png"),
-                        fit: BoxFit.fill,
-                      )
+                    image: AssetImage("assets/imagens_mercado/background.png"),
+                    fit: BoxFit.fill,
+                  )),
+                  child: Column(children: [
+                    GestureDetector(
+                      child: Container(
+                        margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.006,
+                          right: MediaQuery.of(context).size.width * 0.1,
+                        ),
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        height: MediaQuery.of(context).size.height * 0.225,
+                        child: Image.asset(
+                          "assets/imagens_mercado/balao-fala.png",
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                     ),
-                    // child: Row(children: [
-                    //         GestureDetector(
-                    //           child: Container(
-                    //             margin: EdgeInsets.only(
-                    //               top: MediaQuery.of(context).size.height * 0.27,
-                    //               left: MediaQuery.of(context).size.width * 0.52,
-                    //             ),
-                    //             width: MediaQuery.of(context).size.width * 0.2,
-                    //             height: MediaQuery.of(context).size.height *0.2,
-                    //             child: Image.asset(
-                    //               "assests/imagens_mercado/balao-fala.png",
-                    //             fit: BoxFit.fill,
-                    //             ),
-                    //           ),
-                    //         ),
-                    //       ]
-                    //     )
-                        )
-                ])),
-            Container(
-              child: Column(
-                children: [
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [MenuLateral()])
-                ],
-              ),
+                  GestureDetector(
+                    child: Container(
+                        margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.009,
+                          right: MediaQuery.of(context).size.width * 0.54,
+                        ),
+                        width: MediaQuery.of(context).size.width * 0.38,
+                        height: MediaQuery.of(context).size.height * 0.65,
+                        child: Image.asset(
+                          "assets/imagens_mercado/mercador.png",
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ]
+                )
+              )
+            ]),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                      margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.35,
+                        left: MediaQuery.of(context).size.height * 0.975,
+                      ),
+                      width: MediaQuery.of(context).size.width * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.150,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image:
+                              AssetImage("assets/imagens_mercado/coca.png"),
+                          fit: BoxFit.fill,
+                        ),
+                      )),
+                GestureDetector(
+                  child: Container(
+                        margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.04,
+                          left: MediaQuery.of(context).size.height * 0.975,
+                        ),
+                        width: MediaQuery.of(context).size.width * 0.25,
+                        height: MediaQuery.of(context).size.height * 0.20,
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/imagens_mercado/batata.png"))))
+                ),
+                GestureDetector(
+                  child: Container(                      
+                        margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.005,
+                          left: MediaQuery.of(context).size.height * 0.975,
+                        ),
+                        width: MediaQuery.of(context).size.width * 0.25,
+                        height: MediaQuery.of(context).size.height * 0.25,
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/imagens_mercado/garrafinha.png"))))),        
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                      child: Column(children: [
+                        GestureDetector(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height *0.32,
+                              left: MediaQuery.of(context).size.height * 1.35,
+                            ),
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image:
+                                    AssetImage("assets/imagens_mercado/troca.png"),
+                                fit: BoxFit.fill,
+                              )
+                            ),
+                          )
+                        ),
+                        GestureDetector(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height *0.02,
+                              left: MediaQuery.of(context).size.height * 1.35,
+                            ),
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image:
+                                    AssetImage("assets/imagens_mercado/troca.png"),
+                                fit: BoxFit.fill,
+                              )
+                            ),
+                          )
+                        ),
+                        GestureDetector(
+                          child: Container(
+                            margin: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height *0.02,
+                              left: MediaQuery.of(context).size.height * 1.35,
+                            ),
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image:
+                                    AssetImage("assets/imagens_mercado/troca.png"),
+                                fit: BoxFit.fill,
+                              )
+                            ),
+                          )
+                        ),
+                      ]))
+                
+                        
+              ],
+            ),
+            Column(
+              children: [
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [MenuLateral()])
+              ],
             )
           ]);
         },

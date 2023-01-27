@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 class AppImagens {
   static const String fundo_cpf = 'assets/images/background_CPF.png';
   static const String fundo_digitar = 'assets/images/fundo_digitar.png';

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
 import '../../components/components.dart';
 
 class CardapioPage extends StatefulWidget {
@@ -22,7 +21,6 @@ class _CardapioPageState extends State<CardapioPage> {
                   image: DecorationImage(
                     image: AssetImage(
                       "assets/images/background-madeira.png",
-    
                     ),
                     fit: BoxFit.fill,
                   ),
@@ -41,7 +39,8 @@ class _CardapioPageState extends State<CardapioPage> {
                       height: MediaQuery.of(context).size.height * 0.50,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage("assets/imagens_cardapio/6.png"),
+                          image:
+                              AssetImage("assets/imagens_cardapio/Pavard.png"),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -55,7 +54,7 @@ class _CardapioPageState extends State<CardapioPage> {
                             width: MediaQuery.of(context).size.width * 0.2,
                             height: MediaQuery.of(context).size.height * 0.2,
                             child: Image.asset(
-                              "assets/imagens_cardapio/11.png",
+                              "assets/imagens_cardapio/Botao_Adicionar.png",
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -75,7 +74,7 @@ class _CardapioPageState extends State<CardapioPage> {
                         decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage(
-                                    "assets/imagens_cardapio/9.png"))),
+                                    "assets/imagens_cardapio/Shalom.png"))),
                         child: Row(children: [
                           GestureDetector(
                             child: Container(
@@ -86,7 +85,7 @@ class _CardapioPageState extends State<CardapioPage> {
                               width: MediaQuery.of(context).size.width * 0.2,
                               height: MediaQuery.of(context).size.height * 0.2,
                               child: Image.asset(
-                                "assets/imagens_cardapio/11.png",
+                                "assets/imagens_cardapio/Botao_Adicionar.png",
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -106,7 +105,7 @@ class _CardapioPageState extends State<CardapioPage> {
                         decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage(
-                                    "assets/imagens_cardapio/7.png"))),
+                                    "assets/imagens_cardapio/Brhonos.png"))),
                         child: Row(children: [
                           GestureDetector(
                             child: Container(
@@ -117,7 +116,7 @@ class _CardapioPageState extends State<CardapioPage> {
                               width: MediaQuery.of(context).size.width * 0.2,
                               height: MediaQuery.of(context).size.height * 0.2,
                               child: Image.asset(
-                                "assets/imagens_cardapio/11.png",
+                                "assets/imagens_cardapio/Botao_Adicionar.png",
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -137,7 +136,7 @@ class _CardapioPageState extends State<CardapioPage> {
                         decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage(
-                                    "assets/imagens_cardapio/8.png"))),
+                                    "assets/imagens_cardapio/Selva.png"))),
                         child: Row(children: [
                           GestureDetector(
                             child: Container(
@@ -148,7 +147,7 @@ class _CardapioPageState extends State<CardapioPage> {
                               width: MediaQuery.of(context).size.width * 0.2,
                               height: MediaQuery.of(context).size.height * 0.2,
                               child: Image.asset(
-                                "assets/imagens_cardapio/11.png",
+                                "assets/imagens_cardapio/Botao_Adicionar.png",
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -168,7 +167,7 @@ class _CardapioPageState extends State<CardapioPage> {
                         decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage(
-                                    "assets/imagens_cardapio/10.png"))),
+                                    "assets/imagens_cardapio/Osgard.png"))),
                         child: Row(children: [
                           GestureDetector(
                             child: Container(
@@ -179,7 +178,7 @@ class _CardapioPageState extends State<CardapioPage> {
                               width: MediaQuery.of(context).size.width * 0.2,
                               height: MediaQuery.of(context).size.height * 0.2,
                               child: Image.asset(
-                                "assets/imagens_cardapio/11.png",
+                                "assets/imagens_cardapio/Botao_Adicionar.png",
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -199,7 +198,7 @@ class _CardapioPageState extends State<CardapioPage> {
                         decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage(
-                                    "assets/imagens_cardapio/5.png"))),
+                                    "assets/imagens_cardapio/Tatata.png"))),
                         child: Row(children: [
                           GestureDetector(
                             child: Container(
@@ -210,7 +209,7 @@ class _CardapioPageState extends State<CardapioPage> {
                               width: MediaQuery.of(context).size.width * 0.2,
                               height: MediaQuery.of(context).size.height * 0.2,
                               child: Image.asset(
-                                "assets/imagens_cardapio/11.png",
+                                "assets/imagens_cardapio/Botao_Adicionar.png",
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -228,12 +227,6 @@ class _CardapioPageState extends State<CardapioPage> {
                       children: [MenuLateral()])
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  botaoAdicionar(context),
-                ],
-              )
             ],
           );
         },
