@@ -1,34 +1,41 @@
 {
   "project_info": {
-    "project_number": "177410530153",
-    "project_id": "banquete-do-monarca-teste-2",
-    "storage_bucket": "banquete-do-monarca-teste-2.appspot.com"
+    "project_number": "1021889924336",
+    "project_id": "banquete-do-monarca-9f145",
+    "storage_bucket": "banquete-do-monarca-9f145.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:177410530153:android:97030f78adcbf19ec6fbf8",
+        "mobilesdk_app_id": "1:1021889924336:android:88927309a3930a01ff8635",
         "android_client_info": {
           "package_name": "com.example.banquete_do_monarca"
         }
       },
       "oauth_client": [
         {
-          "client_id": "177410530153-3otm26tkq1e82h743ei0ebebrvmdfcfc.apps.googleusercontent.com",
+          "client_id": "1021889924336-s4km4f0ai9caed520v35mb9ijmi71l18.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBWIPUi7KakykdOS4pywli4dALqMFbJh1g"
+          "current_key": "AIzaSyAaZV75bY5Ia1N40LB484_FeFsepo5jOHA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "177410530153-3otm26tkq1e82h743ei0ebebrvmdfcfc.apps.googleusercontent.com",
+              "client_id": "1021889924336-s4km4f0ai9caed520v35mb9ijmi71l18.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1021889924336-pfr963ob74jf0v216f50unk80nqj0lq0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.banqueteDoMonarca"
+              }
             }
           ]
         }
