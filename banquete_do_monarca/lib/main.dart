@@ -6,7 +6,6 @@ import 'firebase_options.dart';
 
 void main() async {
   runApp(const MyApp());
-<<<<<<< HEAD
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -14,7 +13,5 @@ void main() async {
   .collection("cliente")
   .doc()
   .set({'cpf': '056.809.411.58', 'pontos': '170'});
-=======
->>>>>>> 9c4b5c829fb4b6c3852b965ecc0e8817b30b46e0
 }
 
