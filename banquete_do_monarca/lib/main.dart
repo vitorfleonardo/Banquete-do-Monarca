@@ -5,11 +5,4 @@ import 'package:flutter/material.dart';
 
 void main() async {
   runApp(const MyApp());
-
-  // await Firebase.initializeApp();
-
-  // FirebaseFirestore.instance
-  //     .collection('consumidor')
-  //     .doc()
-  //     .set({'cpf': '06706767131', 'points': '100'});
 }

@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme:
             ColorScheme.fromSwatch().copyWith(secondary: AppColors.secondary),
       ),
-      home: MercadoPage(),
+      home: const HomePage(),
     );
   }
 }

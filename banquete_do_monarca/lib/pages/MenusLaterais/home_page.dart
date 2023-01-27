@@ -230,6 +230,9 @@ class _HomePageState extends State<HomePage> {
                     child: InkWell(
                       child: botaoAdicionar(context),
                       onTap: () {
+                        if (isImage1 == true) {
+                          osgard = 1;
+                        }
                         limparSelecionados();
                       },
                     ),
