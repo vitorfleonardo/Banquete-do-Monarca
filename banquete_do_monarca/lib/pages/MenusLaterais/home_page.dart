@@ -1,4 +1,7 @@
 //import 'dart:html';
+import 'package:banquete_do_monarca/data/dummy_data.dart';
+import 'package:banquete_do_monarca/pages/MenusLaterais/home_page_lista.dart';
+import 'package:banquete_do_monarca/repository/produtos.dart';
 import 'package:flutter/material.dart';
 import '../../components/components.dart';
 import 'package:banquete_do_monarca/core/app_lists.dart';
@@ -11,25 +14,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Product> produtos =
+      dummyProducts.where((produto) => produto.imgHome.isNotEmpty).toList();
+  List<Product> produtosSelecionados = [];
+  void onProdutoSelecionado(Product produto) {
+    setState(() {
+      if (produtosSelecionados.contains(produto)) {
+        produtosSelecionados.remove(produto);
+      } else {
+        produtosSelecionados.add(produto);
+      }
+    });
+  }
+
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   void _openEndDrawer() {
     _scaffoldKey.currentState!.openEndDrawer();
-  }
-
-  bool isImage1 = false;
-  bool isImage2 = false;
-  bool isImage3 = false;
-  bool isImage4 = false;
-  bool isImage5 = false;
-
-  limparSelecionados() {
-    setState(() {
-      isImage1 = false;
-      isImage2 = false;
-      isImage3 = false;
-      isImage4 = false;
-      isImage5 = false;
-    });
   }
 
   @override
@@ -96,130 +96,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  GestureDetector(
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.667,
-                        left: MediaQuery.of(context).size.width * 0.155,
-                      ),
-                      width: MediaQuery.of(context).size.width * 0.14,
-                      height: MediaQuery.of(context).size.height * 0.22,
-                      child: isImage1 == false
-                          ? Image.asset(
-                              primeiro,
-                              fit: BoxFit.fill,
-                            )
-                          : Image.asset(
-                              primeiroSelecionado,
-                              fit: BoxFit.fill,
-                            ),
-                    ),
-                    onTap: () {
-                      setState(() {
-                        isImage1 = !isImage1;
-                      });
-                    },
-                  ),
-                  GestureDetector(
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.667,
-                        left: MediaQuery.of(context).size.width * 0.03,
-                      ),
-                      width: MediaQuery.of(context).size.width * 0.14,
-                      height: MediaQuery.of(context).size.height * 0.22,
-                      child: isImage2 == false
-                          ? Image.asset(
-                              segundo,
-                              fit: BoxFit.fill,
-                            )
-                          : Image.asset(
-                              segundoSelecionado,
-                              fit: BoxFit.fill,
-                            ),
-                    ),
-                    onTap: () {
-                      setState(() {
-                        isImage2 = !isImage2;
-                      });
-                    },
-                  ),
-                  GestureDetector(
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.667,
-                        left: MediaQuery.of(context).size.width * 0.03,
-                      ),
-                      width: MediaQuery.of(context).size.width * 0.14,
-                      height: MediaQuery.of(context).size.height * 0.22,
-                      child: isImage3 == false
-                          ? Image.asset(
-                              terceiro,
-                              fit: BoxFit.fill,
-                            )
-                          : Image.asset(
-                              terceiroSelecionado,
-                              fit: BoxFit.fill,
-                            ),
-                    ),
-                    onTap: () {
-                      setState(() {
-                        isImage3 = !isImage3;
-                      });
-                    },
-                  ),
-                  InkWell(
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.667,
-                        left: MediaQuery.of(context).size.width * 0.03,
-                      ),
-                      width: MediaQuery.of(context).size.width * 0.14,
-                      height: MediaQuery.of(context).size.height * 0.22,
-                      child: isImage4 == false
-                          ? Image.asset(
-                              quarto,
-                              fit: BoxFit.fill,
-                            )
-                          : Image.asset(
-                              quartoSelecionado,
-                              fit: BoxFit.fill,
-                            ),
-                    ),
-                    onTap: () {
-                      setState(() {
-                        isImage4 = !isImage4;
-                      });
-                    },
-                  ),
-                  GestureDetector(
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.667,
-                        left: MediaQuery.of(context).size.width * 0.03,
-                      ),
-                      width: MediaQuery.of(context).size.width * 0.14,
-                      height: MediaQuery.of(context).size.height * 0.22,
-                      child: isImage5 == false
-                          ? Image.asset(
-                              quinto,
-                              fit: BoxFit.fill,
-                            )
-                          : Image.asset(
-                              quintoSelecionado,
-                              fit: BoxFit.fill,
-                            ),
-                    ),
-                    onTap: () {
-                      setState(() {
-                        isImage5 = !isImage5;
-                      });
-                    },
-                  ),
-                ],
+              Padding(
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.155),
+                child: HomePageLista(
+                    produtos: produtos,
+                    produtosSelecionados: produtosSelecionados,
+                    onProdutoSelecionado: onProdutoSelecionado),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -229,12 +112,7 @@ class _HomePageState extends State<HomePage> {
                         top: MediaQuery.of(context).size.height * 0.91),
                     child: InkWell(
                       child: botaoAdicionar(context),
-                      onTap: () {
-                        if (isImage1 == true) {
-                          osgard = 1;
-                        }
-                        limparSelecionados();
-                      },
+                      onTap: () {},
                     ),
                   ),
                 ],

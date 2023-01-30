@@ -4,6 +4,7 @@ class Product {
   final double price;
   final double points;
   final String imgCardapio;
+  final String imgHome;
 
   Product({
     required this.name,
@@ -11,5 +12,6 @@ class Product {
     required this.imgCarrinho,
     required this.price,
     required this.imgCardapio,
+    required this.imgHome,
   });
 }

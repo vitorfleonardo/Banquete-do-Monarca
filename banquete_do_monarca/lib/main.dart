@@ -9,9 +9,4 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  FirebaseFirestore.instance
-  .collection("cliente")
-  .doc()
-  .set({'cpf': '056.809.411.58', 'pontos': '1235'});
 }
-
