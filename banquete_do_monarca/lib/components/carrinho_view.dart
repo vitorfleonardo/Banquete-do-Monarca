@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:banquete_do_monarca/core/app_lists.dart';
 
 import '../core/app_colors.dart';
 
@@ -10,11 +9,6 @@ class Carrinho extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    late String pedido;
-    pedido = "";
-    if (osgard == 1) {
-      pedido = "assets/imagens_carrinho/osgard.png";
-    }
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.5,
       child: Drawer(
@@ -31,7 +25,7 @@ class Carrinho extends StatelessWidget {
                   child: FittedBox(
                     fit: BoxFit.fitWidth,
                     child: Text(
-                      "Meu Carrinho",
+                      "Meus Pedidos",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
@@ -85,22 +79,9 @@ class Carrinho extends StatelessWidget {
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.15,
                 width: MediaQuery.of(context).size.width * 0.48,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(pedido), fit: BoxFit.cover),
-                ),
-                child: Center(
-                  child: Container(
-                    margin: EdgeInsets.only(
-                      right: MediaQuery.of(context).size.width * 0.44,
-                    ),
-                    height: MediaQuery.of(context).size.height * 0.09,
-                    width: MediaQuery.of(context).size.width * 0.059,
-                    child: const Icon(
-                      Icons.delete,
-                      color: Colors.grey,
-                    ),
-                  ),
+                decoration: const BoxDecoration(
+                  image:
+                      DecorationImage(image: AssetImage(""), fit: BoxFit.cover),
                 ),
               ),
             ),

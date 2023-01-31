@@ -15,5 +15,3 @@ String quarto = "assets/burgers/quartoPP-normal.png";
 String quartoSelecionado = "assets/burgers/quartoPP-selecionado.png";
 String quinto = "assets/burgers/quintoPP-normal.png";
 String quintoSelecionado = "assets/burgers/quintoPP-selecionado.png";
-
-int osgard = 0;

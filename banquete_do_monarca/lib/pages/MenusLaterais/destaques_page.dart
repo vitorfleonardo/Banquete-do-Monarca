@@ -10,6 +10,7 @@ import '../../components/carrinho_view.dart';
 import 'package:banquete_do_monarca/core/app_lists.dart';
 
 import '../../components/menu_lateral.dart';
+import '../../core/app_colors.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -70,7 +71,21 @@ class _HomePageState extends State<HomePage> {
                       width: MediaQuery.of(context).size.width * 0.13,
                       height: MediaQuery.of(context).size.height * 0.11,
                       decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 228, 228, 228),
+                        color: AppColors.secondary,
+                      ),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: FittedBox(
+                          child: Text(
+                            "Meus Pedidos",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'awesomeLathusca'),
+                            maxLines: 1,
+                          ),
+                        ),
                       ),
                     ),
                     onTap: () => _openEndDrawer(),
