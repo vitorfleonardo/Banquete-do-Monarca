@@ -3,6 +3,8 @@ import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -102,15 +104,35 @@ class LoginPage extends StatelessWidget {
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(5))),
                                     ),
-                                    onPressed: () {
+                                    onPressed: () async {
                                       String cpf = _cpf.text;
+                                      var collection = FirebaseFirestore
+                                          .instance
+                                          .collection('cliente');
+                                      var result = await collection.get();
+                                      //collection.snapshots().listen((c) {
+                                      // result=c;
+                                      // if((cpf)==(c.docs[1]['cpf'])){
+                                      //   print(c.docs[0]['cpf']);
+                                      // }
+                                      //});
+                                      for (var doc in result.docs) {
+                                        if ((cpf) == (doc['cpf'])) {
+                                          print('bom');
+                                        }
+                                      }
 
                                       if (GetUtils.isCpf(cpf)) {
+                                        FirebaseFirestore.instance
+                                            .collection("cliente")
+                                            .doc()
+                                            .set({'cpf': (cpf)});
                                         Navigator.of(context).push(
                                             MaterialPageRoute(
                                                 builder: (context) =>
                                                     const StoryPage()));
                                       } else {
+                                        // ignore: use_build_context_synchronously
                                         showDialog<String>(
                                           context: context,
                                           builder: (BuildContext context) =>
