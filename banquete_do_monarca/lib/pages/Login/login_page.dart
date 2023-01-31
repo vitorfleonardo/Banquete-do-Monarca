@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:brasil_fields/brasil_fields.dart';
 import '/repository/consumer.dart';
 import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
@@ -7,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);

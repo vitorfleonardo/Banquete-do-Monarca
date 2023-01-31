@@ -1,7 +1,5 @@
 import 'package:banquete_do_monarca/repository/produtos.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class CardapioPageLista extends StatelessWidget {
   final List<Product> comidas;
