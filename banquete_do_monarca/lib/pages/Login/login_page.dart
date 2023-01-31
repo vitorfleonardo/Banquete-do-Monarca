@@ -119,37 +119,38 @@ class LoginPage extends StatelessWidget {
                                       for (var doc in result.docs) {
                                         if ((cpf) == (doc['cpf'])) {
                                           print('bom');
-                                        }
-                                      }
-
-                                      if (GetUtils.isCpf(cpf)) {
-                                        FirebaseFirestore.instance
-                                            .collection("cliente")
-                                            .doc()
-                                            .set({'cpf': (cpf)});
-                                        Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const StoryPage()));
-                                      } else {
-                                        // ignore: use_build_context_synchronously
-                                        showDialog<String>(
-                                          context: context,
-                                          builder: (BuildContext context) =>
-                                              AlertDialog(
-                                            title:
-                                                const Text('Ocorreu um erro!'),
-                                            content: const Text(
-                                                'Seu CPF é inválido tente novamente!'),
-                                            actions: <Widget>[
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    context, 'OK'),
-                                                child: const Text('OK'),
+                                        } else {
+                                          if (GetUtils.isCpf(cpf)) {
+                                            FirebaseFirestore.instance
+                                                .collection("cliente")
+                                                .doc()
+                                                .set({'cpf': (cpf)});
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const StoryPage()));
+                                          } else {
+                                            // ignore: use_build_context_synchronously
+                                            showDialog<String>(
+                                              context: context,
+                                              builder: (BuildContext context) =>
+                                                  AlertDialog(
+                                                title: const Text(
+                                                    'Ocorreu um erro!'),
+                                                content: const Text(
+                                                    'Seu CPF é inválido tente novamente!'),
+                                                actions: <Widget>[
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            context, 'OK'),
+                                                    child: const Text('OK'),
+                                                  ),
+                                                ],
                                               ),
-                                            ],
-                                          ),
-                                        );
+                                            );
+                                          }
+                                        }
                                       }
                                     },
                                   ),
