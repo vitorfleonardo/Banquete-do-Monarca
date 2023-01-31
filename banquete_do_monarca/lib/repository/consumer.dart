@@ -6,4 +6,8 @@ class User {
     required this.points,
     required this.cpf,
   });
+  Map<String, dynamic> toJson() => {
+        'pontos': points,
+        'cpf': cpf,
+      };
 }
