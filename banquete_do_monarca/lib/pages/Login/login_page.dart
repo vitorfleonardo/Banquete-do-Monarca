@@ -1,4 +1,5 @@
 import 'package:brasil_fields/brasil_fields.dart';
+import '/repository/consumer.dart';
 import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,7 +9,9 @@ import 'package:firebase_core/firebase_core.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
+
   final TextEditingController _cpf = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,57 +108,9 @@ class LoginPage extends StatelessWidget {
                                               Radius.circular(5))),
                                     ),
                                     onPressed: () async {
-                                      String cpf = _cpf.text;
-                                      var collection = FirebaseFirestore
-                                          .instance
-                                          .collection('cliente');
-                                      var result = await collection.get();
-                                      //collection.snapshots().listen((c) {
-                                      // result=c;
-                                      // if((cpf)==(c.docs[1]['cpf'])){
-                                      //   print(c.docs[0]['cpf']);
-                                      // }
-                                      //});
-                                      for (var doc in result.docs) {
-                                        if ((cpf) == (doc['cpf'])) {
-                                          print('bom');
-                                          Navigator.of(context).push(
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const StoryPage()));
-                                        } else {
-                                          if (GetUtils.isCpf(cpf)) {
-                                            FirebaseFirestore.instance
-                                                .collection("cliente")
-                                                .doc()
-                                                .set({'cpf': (cpf)});
-                                            Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        const StoryPage()));
-                                          } else {
-                                            // ignore: use_build_context_synchronously
-                                            showDialog<String>(
-                                              context: context,
-                                              builder: (BuildContext context) =>
-                                                  AlertDialog(
-                                                title: const Text(
-                                                    'Ocorreu um erro!'),
-                                                content: const Text(
-                                                    'Seu CPF é inválido tente novamente!'),
-                                                actions: <Widget>[
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            context, 'OK'),
-                                                    child: const Text('OK'),
-                                                  ),
-                                                ],
-                                              ),
-                                            );
-                                          }
-                                        }
-                                      }
+                                      final user = _cpf.text;
+                                      User(points: 0, cpf: _cpf.text);
+                                      //createUser(user);
                                     },
                                   ),
                                 ),
@@ -179,15 +134,8 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-
-// TextEditingController _passwordController = TextEditingController();
-// if(condition)
-// {
-//  //success call
-// }
-// else
-// {
-// setState((){
-//   _passwordController.text="Password Does not match
-//  });
-// }
+/*Future createUser(User user) async {
+  final docUser = FirebaseFirestore.instance.collection('usuarios').doc();
+  //final json = user.toJson();
+  await docUser.set(json);
+}*/

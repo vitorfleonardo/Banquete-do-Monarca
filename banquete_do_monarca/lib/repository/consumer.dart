@@ -1,5 +1,5 @@
 class User {
-  final String points;
+  final int points;
   final String cpf;
 
   User({
