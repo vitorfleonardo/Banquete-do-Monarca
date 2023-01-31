@@ -2,7 +2,7 @@ import 'package:banquete_do_monarca/data/dummy_data.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/cardapio_page_lista.dart';
 import 'package:banquete_do_monarca/repository/produtos.dart';
 import 'package:flutter/material.dart';
-import '../../components/components.dart';
+import '../../components/menu_lateral.dart';
 
 class CardapioPage extends StatefulWidget {
   const CardapioPage({Key? key}) : super(key: key);

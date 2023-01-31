@@ -3,8 +3,12 @@ import 'package:banquete_do_monarca/data/dummy_data.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/home_page_lista.dart';
 import 'package:banquete_do_monarca/repository/produtos.dart';
 import 'package:flutter/material.dart';
-import '../../components/components.dart';
+import '../../components/barra_de_destaques.dart';
+import '../../components/botao_adc_destaques.dart';
+import '../../components/carrinho_view.dart';
 import 'package:banquete_do_monarca/core/app_lists.dart';
+
+import '../../components/menu_lateral.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

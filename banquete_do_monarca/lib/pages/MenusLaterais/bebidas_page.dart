@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../components/components.dart';
+import '../../components/menu_lateral.dart';
 
 class BebidasPage extends StatefulWidget {
   const BebidasPage({Key? key}) : super(key: key);
