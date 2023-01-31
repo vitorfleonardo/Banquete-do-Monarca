@@ -24,7 +24,9 @@ class Carrinho extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.5,
               height: MediaQuery.of(context).size.height * 0.14,
               child: const DrawerHeader(
-                // ignore: sort_child_properties_last
+                decoration: BoxDecoration(
+                  color: AppColors.secondary,
+                ),
                 child: Center(
                   child: FittedBox(
                     fit: BoxFit.fitWidth,
@@ -38,9 +40,6 @@ class Carrinho extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-                decoration: BoxDecoration(
-                  color: AppColors.secondary,
                 ),
               ),
             ),
@@ -66,12 +65,10 @@ class Carrinho extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width * 0.26),
-                    // ignore: prefer_const_constructors
-                    child: FittedBox(
+                    child: const FittedBox(
                       fit: BoxFit.fitWidth,
-                      child: const Text(
+                      child: Text(
                         "Qtde",
-                        // ignore: prefer_const_constructors
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 15,

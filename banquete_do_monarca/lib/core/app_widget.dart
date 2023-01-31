@@ -4,7 +4,8 @@ import 'package:banquete_do_monarca/pages/MenusLaterais/cardapio_page.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/mercado_page.dart';
 import 'package:flutter/material.dart';
 import 'package:banquete_do_monarca/core/app_colors.dart';
-import 'package:banquete_do_monarca/pages/MenusLaterais/home_page.dart';
+
+import '../pages/MenusLaterais/destaques_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme:
             ColorScheme.fromSwatch().copyWith(secondary: AppColors.secondary),
       ),
-      home: LoginPage(),
+      home: const HomePage(),
     );
   }
 }

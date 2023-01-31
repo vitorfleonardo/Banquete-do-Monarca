@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../core/app_colors.dart';
 import '../pages/MenusLaterais/bebidas_page.dart';
 import '../pages/MenusLaterais/cardapio_page.dart';
-import '../pages/MenusLaterais/home_page.dart';
+import '../pages/MenusLaterais/destaques_page.dart';
 import '../pages/MenusLaterais/mercado_page.dart';
 import '../pages/Storytelling/story_page.dart';
 

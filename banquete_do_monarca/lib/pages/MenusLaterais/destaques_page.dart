@@ -1,8 +1,9 @@
 //import 'dart:html';
 import 'package:banquete_do_monarca/data/dummy_data.dart';
-import 'package:banquete_do_monarca/pages/MenusLaterais/home_page_lista.dart';
+import 'package:banquete_do_monarca/pages/MenusLaterais/destaques_page_lista.dart';
 import 'package:banquete_do_monarca/repository/produtos.dart';
 import 'package:flutter/material.dart';
+import '../../components/background_geral.dart';
 import '../../components/barra_de_destaques.dart';
 import '../../components/botao_adc_destaques.dart';
 import '../../components/carrinho_view.dart';
@@ -60,16 +61,7 @@ class _HomePageState extends State<HomePage> {
         builder: (context, constraint) {
           return Stack(
             children: <Widget>[
-              Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      "assets/images/background-madeira.png",
-                    ),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
+              const BackgroundGeneral(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

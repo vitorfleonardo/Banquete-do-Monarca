@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../components/background_geral.dart';
 import '../../components/menu_lateral.dart';
 
 class BebidasPage extends StatefulWidget {
@@ -17,16 +18,7 @@ class _BebidasPageState extends State<BebidasPage> {
         builder: (context, constraint) {
           return Stack(
             children: <Widget>[
-              Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      "assets/images/background-madeira.png",
-                    ),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
+              const BackgroundGeneral(),
               SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
