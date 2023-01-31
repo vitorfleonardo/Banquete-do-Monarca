@@ -119,6 +119,10 @@ class LoginPage extends StatelessWidget {
                                       for (var doc in result.docs) {
                                         if ((cpf) == (doc['cpf'])) {
                                           print('bom');
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const StoryPage()));
                                         } else {
                                           if (GetUtils.isCpf(cpf)) {
                                             FirebaseFirestore.instance
