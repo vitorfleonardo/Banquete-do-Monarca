@@ -8,6 +8,7 @@ final dummyProducts = [
     points: 150,
     imgCardapio: "assets/imagens_cardapio/Osgard.png",
     imgHome: "assets/burgers/primeiroPP-normal.png",
+    imgBebidas: ""
   ),
   Product(
     name: "Pavard",
@@ -16,6 +17,7 @@ final dummyProducts = [
     points: 150,
     imgCardapio: "assets/imagens_cardapio/Pavard.png",
     imgHome: "assets/burgers/quintoPP-normal.png",
+    imgBebidas: ""
   ),
   Product(
     name: "Shalom",
@@ -24,6 +26,7 @@ final dummyProducts = [
     points: 150,
     imgCardapio: "assets/imagens_cardapio/Shalom.png",
     imgHome: "assets/burgers/segundoPP-normal.png",
+    imgBebidas: ""
   ),
   Product(
     name: "Brhonos",
@@ -32,6 +35,7 @@ final dummyProducts = [
     points: 150,
     imgCardapio: "assets/imagens_cardapio/Brhonos.png",
     imgHome: "assets/burgers/quartoPP-normal.png",
+    imgBebidas: ""
   ),
   Product(
       name: "Selva",
@@ -39,7 +43,9 @@ final dummyProducts = [
       price: 29.90,
       points: 150,
       imgCardapio: "assets/imagens_cardapio/Selva.png",
-      imgHome: "assets/burgers/terceiroPP-normal.png"),
+      imgHome: "assets/burgers/terceiroPP-normal.png",
+      imgBebidas: "",
+  ),
   Product(
     name: "Tatata",
     imgCarrinho: "assets/imagens_carrinho/tatata.png",
@@ -47,12 +53,14 @@ final dummyProducts = [
     points: 100,
     imgCardapio: "assets/imagens_cardapio/Tatata.png",
     imgHome: "",
+    imgBebidas: "",
   ),
   Product(
     name: "Hortelaço",
     imgCarrinho: "assets/imagens_bebidas/Hortelaco.png",
     price: 10.00,
     points: 200,
+    imgCardapio: "",
     imgBebidas: "assets/imagens_bebidas/Hortelaco.png",
     imgHome: ","
   ),
@@ -61,15 +69,19 @@ final dummyProducts = [
     imgCarrinho: "assets/imagens_bebidas/Jatoman.png",
     price: 11.00,
     points: 50,
+    imgCardapio: "",
     imgBebidas: "assets/imagens_bebidas/Jatoman.png",
-    imgHome: ","
+    imgHome: "",
+    
   ),
   Product(
     name: "Oriumm",
     imgCarrinho: "assets/imagens_bebidas/Oriumm.png",
     price: 20.00,
     points: 80,
+    imgCardapio: "",
     imgBebidas: "assets/imagens_bebidas/Oriumm.png",
-    imgHome: ","
+    imgHome: "",
+    
   ),
 ];
