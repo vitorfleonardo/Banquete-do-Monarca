@@ -47,5 +47,29 @@ final dummyProducts = [
     points: 100,
     imgCardapio: "assets/imagens_cardapio/Tatata.png",
     imgHome: "",
-  )
+  ),
+  Product(
+    name: "Hortelaço",
+    imgCarrinho: "assets/imagens_bebidas/Hortelaco.png",
+    price: 10.00,
+    points: 200,
+    imgBebidas: "assets/imagens_bebidas/Hortelaco.png",
+    imgHome: ","
+  ),
+  Product(
+    name: "Jatomân",
+    imgCarrinho: "assets/imagens_bebidas/Jatoman.png",
+    price: 11.00,
+    points: 50,
+    imgBebidas: "assets/imagens_bebidas/Jatoman.png",
+    imgHome: ","
+  ),
+  Product(
+    name: "Oriumm",
+    imgCarrinho: "assets/imagens_bebidas/Oriumm.png",
+    price: 20.00,
+    points: 80,
+    imgBebidas: "assets/imagens_bebidas/Oriumm.png",
+    imgHome: ","
+  ),
 ];
