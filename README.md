@@ -1,2 +1,2 @@
 # Banquete-do-Monarca
-Aplicativo gamificado de cadápio para restaurante temático medieval 
+Aplicativo gamificado de cardápio para restaurante temático medieval 
