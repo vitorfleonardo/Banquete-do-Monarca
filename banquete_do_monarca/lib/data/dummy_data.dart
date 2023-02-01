@@ -2,49 +2,45 @@ import '../repository/produtos.dart';
 
 final dummyProducts = [
   Product(
-    name: "Osgard",
-    imgCarrinho: "assets/imagens_carrinho/osgard.png",
-    price: 29.90,
-    points: 150,
-    imgCardapio: "assets/imagens_cardapio/Osgard.png",
-    imgHome: "assets/burgers/primeiroPP-normal.png",
-    imgBebidas: ""
-  ),
-  Product(
-    name: "Pavard",
-    imgCarrinho: "assets/imagens_carrinho/pavard.png",
-    price: 29.90,
-    points: 150,
-    imgCardapio: "assets/imagens_cardapio/Pavard.png",
-    imgHome: "assets/burgers/quintoPP-normal.png",
-    imgBebidas: ""
-  ),
-  Product(
-    name: "Shalom",
-    imgCarrinho: "assets/imagens_carrinho/shalom.png",
-    price: 29.90,
-    points: 150,
-    imgCardapio: "assets/imagens_cardapio/Shalom.png",
-    imgHome: "assets/burgers/segundoPP-normal.png",
-    imgBebidas: ""
-  ),
-  Product(
-    name: "Brhonos",
-    imgCarrinho: "assets/imagens_carrinho/brhonos.png",
-    price: 29.90,
-    points: 150,
-    imgCardapio: "assets/imagens_cardapio/Brhonos.png",
-    imgHome: "assets/burgers/quartoPP-normal.png",
-    imgBebidas: ""
-  ),
-  Product(
-      name: "Selva",
-      imgCarrinho: "assets/imagens_carrinho/selva.png",
+      name: "Osgard",
+      imgCarrinho: "assets/imagens_carrinho/osgard.png",
       price: 29.90,
       points: 150,
-      imgCardapio: "assets/imagens_cardapio/Selva.png",
-      imgHome: "assets/burgers/terceiroPP-normal.png",
-      imgBebidas: "",
+      imgCardapio: "assets/imagens_cardapio/Osgard.png",
+      imgHome: "assets/burgers/primeiroPP-normal.png",
+      imgBebidas: ""),
+  Product(
+      name: "Pavard",
+      imgCarrinho: "assets/imagens_carrinho/pavard.png",
+      price: 29.90,
+      points: 150,
+      imgCardapio: "assets/imagens_cardapio/Pavard.png",
+      imgHome: "assets/burgers/quintoPP-normal.png",
+      imgBebidas: ""),
+  Product(
+      name: "Shalom",
+      imgCarrinho: "assets/imagens_carrinho/shalom.png",
+      price: 29.90,
+      points: 150,
+      imgCardapio: "assets/imagens_cardapio/Shalom.png",
+      imgHome: "assets/burgers/segundoPP-normal.png",
+      imgBebidas: ""),
+  Product(
+      name: "Brhonos",
+      imgCarrinho: "assets/imagens_carrinho/brhonos.png",
+      price: 29.90,
+      points: 150,
+      imgCardapio: "assets/imagens_cardapio/Brhonos.png",
+      imgHome: "assets/burgers/quartoPP-normal.png",
+      imgBebidas: ""),
+  Product(
+    name: "Selva",
+    imgCarrinho: "assets/imagens_carrinho/selva.png",
+    price: 29.90,
+    points: 150,
+    imgCardapio: "assets/imagens_cardapio/Selva.png",
+    imgHome: "assets/burgers/terceiroPP-normal.png",
+    imgBebidas: "",
   ),
   Product(
     name: "Tatata",
@@ -56,14 +52,13 @@ final dummyProducts = [
     imgBebidas: "",
   ),
   Product(
-    name: "Hortelaço",
-    imgCarrinho: "assets/imagens_bebidas/Hortelaco.png",
-    price: 10.00,
-    points: 200,
-    imgCardapio: "",
-    imgBebidas: "assets/imagens_bebidas/Hortelaco.png",
-    imgHome: ","
-  ),
+      name: "Hortelaço",
+      imgCarrinho: "assets/imagens_bebidas/Hortelaco.png",
+      price: 10.00,
+      points: 200,
+      imgCardapio: "",
+      imgBebidas: "assets/imagens_bebidas/Hortelaco.png",
+      imgHome: ""),
   Product(
     name: "Jatomân",
     imgCarrinho: "assets/imagens_bebidas/Jatoman.png",
@@ -72,7 +67,6 @@ final dummyProducts = [
     imgCardapio: "",
     imgBebidas: "assets/imagens_bebidas/Jatoman.png",
     imgHome: "",
-    
   ),
   Product(
     name: "Oriumm",
@@ -82,6 +76,5 @@ final dummyProducts = [
     imgCardapio: "",
     imgBebidas: "assets/imagens_bebidas/Oriumm.png",
     imgHome: "",
-    
   ),
 ];
