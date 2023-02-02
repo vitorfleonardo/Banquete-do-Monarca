@@ -1,5 +1,5 @@
 import 'package:brasil_fields/brasil_fields.dart';
-import '/repository/consumer.dart';
+import '../../repository/consumer_model.dart';
 import 'package:banquete_do_monarca/pages/Storytelling/story_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

@@ -1,6 +1,6 @@
 import 'package:banquete_do_monarca/data/dummy_data.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/bebidas_page_lista.dart';
-import 'package:banquete_do_monarca/repository/produtos.dart';
+import 'package:banquete_do_monarca/repository/produtos_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/background_geral.dart';
@@ -14,8 +14,8 @@ class BebidasPage extends StatefulWidget {
 }
 
 class _BebidasPageState extends State<BebidasPage> {
-  List<Product> bebidas =
-      dummyProducts.where((bebidas) => bebidas.imgBebidas.isNotEmpty).toList();
+  // List<Product> bebidas =
+  //     dummyProducts.where((bebidas) => bebidas.imgBebidas.isNotEmpty).toList();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +24,7 @@ class _BebidasPageState extends State<BebidasPage> {
           return Stack(
             children: <Widget>[
               const BackgroundGeneral(),
-              BebidasPageLista(bebidas: bebidas),
+              //BebidasPageLista(bebidas: bebidas),
               Column(
                 children: [
                   Row(

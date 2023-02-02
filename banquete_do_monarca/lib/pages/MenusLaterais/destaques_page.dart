@@ -1,8 +1,9 @@
 //import 'dart:html';
-import 'package:banquete_do_monarca/data/dummy_data.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/destaques_page_lista.dart';
-import 'package:banquete_do_monarca/repository/produtos.dart';
+import 'package:banquete_do_monarca/repository/cart_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import '../../components/background_geral.dart';
 import '../../components/barra_de_destaques.dart';
 import '../../components/botao_adc_destaques.dart';
@@ -20,10 +21,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Product> produtos =
-      dummyProducts.where((produto) => produto.imgHome.isNotEmpty).toList();
-  List<Product> produtosSelecionados = [];
-  void onProdutoSelecionado(Product produto) {
+  List<String> produtosSelecionados = [];
+  void onProdutoSelecionado(String produto) {
     setState(() {
       if (produtosSelecionados.contains(produto)) {
         produtosSelecionados.remove(produto);
@@ -63,6 +62,44 @@ class _HomePageState extends State<HomePage> {
           return Stack(
             children: <Widget>[
               const BackgroundGeneral(),
+              Consumer<CartModel>(
+                builder: (context, value, child) {
+                  return GridView.builder(
+                    padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width * 0.155,
+                      top: MediaQuery.of(context).size.height * 0.667,
+                    ),
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: 5,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 5,
+                    ),
+                    itemBuilder: (context, index) {
+                      return HomePageLista(
+                        produtos: value.shopItems[index][5],
+                        produtosSelecionados: produtosSelecionados,
+                        onProdutoSelecionado: onProdutoSelecionado,
+                      );
+                    },
+                  );
+                },
+              ),
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      MenuLateral(),
+                      Column(
+                        children: [
+                          BarraDestaques(imageSliders: imageSliders),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -92,29 +129,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      MenuLateral(),
-                      Column(
-                        children: [
-                          BarraDestaques(imageSliders: imageSliders),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                    left: MediaQuery.of(context).size.width * 0.155),
-                child: HomePageLista(
-                    produtos: produtos,
-                    produtosSelecionados: produtosSelecionados,
-                    onProdutoSelecionado: onProdutoSelecionado),
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -123,7 +137,6 @@ class _HomePageState extends State<HomePage> {
                         top: MediaQuery.of(context).size.height * 0.91),
                     child: InkWell(
                       child: botaoAdicionar(context),
-                      onTap: () {},
                     ),
                   ),
                 ],

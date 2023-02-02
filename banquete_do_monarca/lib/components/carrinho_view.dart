@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../core/app_colors.dart';
+import '../repository/cart_model.dart';
 
 class Carrinho extends StatelessWidget {
-  const Carrinho({
-    Key? key,
-  }) : super(key: key);
+  const Carrinho({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,53 +37,27 @@ class Carrinho extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width * 0.01),
-                    child: const FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        "Item",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
+            Consumer<CartModel>(
+              builder: (context, value, child) {
+                return SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.14,
+                  width: double.infinity,
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: ListView.builder(
+                          itemCount: value.cartItems.length,
+                          itemBuilder: (context, index) {
+                            return ListTile(
+                              title: Text(value.cartItems[index][0]),
+                            );
+                          },
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                  Container(
-                    margin: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width * 0.26),
-                    child: const FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        "Qtde",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: MediaQuery.of(context).size.height * 0.15,
-                width: MediaQuery.of(context).size.width * 0.48,
-                decoration: const BoxDecoration(
-                  image:
-                      DecorationImage(image: AssetImage(""), fit: BoxFit.cover),
-                ),
-              ),
+                );
+              },
             ),
           ],
         ),

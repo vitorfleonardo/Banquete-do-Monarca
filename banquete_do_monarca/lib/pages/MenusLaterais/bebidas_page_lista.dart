@@ -1,4 +1,4 @@
-import 'package:banquete_do_monarca/repository/produtos.dart';
+import 'package:banquete_do_monarca/repository/produtos_model.dart';
 import 'package:flutter/cupertino.dart';
 
 class BebidasPageLista extends StatelessWidget {
