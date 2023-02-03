@@ -108,9 +108,10 @@ class LoginPage extends StatelessWidget {
                                       ),
                                       onPressed: () async {
                                         if (GetUtils.isCpf(_cpf.text)) {
-                                          final user =
-                                              User(points: 0, cpf: _cpf.text);
+                                          final user = User(cpf: _cpf.text);
+                                          //verificação de existencia de usuario
                                           createUser(user);
+
                                           Navigator.of(context).push(
                                               MaterialPageRoute(
                                                   builder: (context) =>
@@ -158,7 +159,8 @@ class LoginPage extends StatelessWidget {
 }
 
 Future createUser(User user) async {
-  final docUser = FirebaseFirestore.instance.collection('usuarios').doc();
+  final docUser =
+      FirebaseFirestore.instance.collection('usuarios').doc(user.cpf);
   final json = user.toJson();
   await docUser.set(json);
 }

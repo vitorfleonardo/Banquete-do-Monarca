@@ -1,9 +1,9 @@
 class User {
-  final int points;
-  final String cpf;
+  final int? points;
+  final String? cpf;
 
   User({
-    required this.points,
+    this.points,
     required this.cpf,
   });
   Map<String, dynamic> toJson() => {

@@ -7,7 +7,6 @@ import '../../components/background_geral.dart';
 import '../../components/carrinho_view.dart';
 import '../../components/menu_lateral.dart';
 import '../../core/app_colors.dart';
-import '../Storytelling/story_page.dart';
 
 class CardapioPage extends StatefulWidget {
   const CardapioPage({Key? key}) : super(key: key);

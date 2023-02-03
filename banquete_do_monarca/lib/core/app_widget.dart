@@ -16,10 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => CartModel(),
-      child: const MaterialApp(
+      child: MaterialApp(
         title: 'Banquete do Monarca',
         debugShowCheckedModeBanner: false,
-        home: CardapioPage(),
+        home: BebidasPage(),
       ),
     );
   }
