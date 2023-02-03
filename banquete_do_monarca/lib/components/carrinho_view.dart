@@ -1,3 +1,4 @@
+import 'package:banquete_do_monarca/pages/Pagamento/pagamento_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -148,7 +149,10 @@ class Carrinho extends StatelessWidget {
                                   const Color.fromARGB(255, 28, 129, 31),
                               shape: const StadiumBorder(),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const PagamentoPage()));
+                            },
                             child: FittedBox(
                               child: Text('Fazer Pedido',
                                   maxLines: 1,
