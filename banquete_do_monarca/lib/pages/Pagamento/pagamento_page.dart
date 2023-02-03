@@ -28,36 +28,34 @@ class _PagamentoPageState extends State<PagamentoPage> {
         builder: (context, constraint) {
           return Stack(
             children: <Widget>[
-              const BackgroundGeneral(), 
+              const BackgroundGeneral(),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 1.0,
                 height: MediaQuery.of(context).size.height * 0.14,
-                  child: const DrawerHeader(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 247, 247, 247),
-                    ),
-                    child: Center(
-                      child: FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: Text(
-                          "Pagamento",
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 36, 35, 35),
-                            fontSize: 40,
-                            fontFamily: 'awesomeLathusca',
-                            fontWeight: FontWeight.bold,
-                          ),
+                child: const DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 247, 247, 247),
+                  ),
+                  child: Center(
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        "Pagamento",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 36, 35, 35),
+                          fontSize: 40,
+                          fontFamily: 'awesomeLathusca',
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                   ),
+                ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.66,
+                  height: MediaQuery.of(context).size.height * 0.66,
                   width: double.infinity,
-                  child: Column(
-                    
-              )   
+                  child: Column()),
             ],
           );
         },
