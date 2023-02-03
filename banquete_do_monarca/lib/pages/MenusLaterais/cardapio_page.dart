@@ -1,12 +1,13 @@
-import 'package:banquete_do_monarca/data/dummy_data.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/cardapio_page_lista.dart';
 import 'package:banquete_do_monarca/repository/cart_model.dart';
-import 'package:banquete_do_monarca/repository/produtos_model.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../components/background_geral.dart';
 import '../../components/carrinho_view.dart';
 import '../../components/menu_lateral.dart';
 import '../../core/app_colors.dart';
+import '../Storytelling/story_page.dart';
 
 class CardapioPage extends StatefulWidget {
   const CardapioPage({Key? key}) : super(key: key);
@@ -30,16 +31,7 @@ class _CardapioPageState extends State<CardapioPage> {
         builder: (context, constraint) {
           return Stack(
             children: <Widget>[
-              Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      "assets/images/background-madeira.png",
-                    ),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
+              const BackgroundGeneral(),
               Consumer<CartModel>(
                 builder: (context, value, child) {
                   return ListView.builder(

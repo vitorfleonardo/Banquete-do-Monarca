@@ -62,29 +62,6 @@ class _HomePageState extends State<HomePage> {
           return Stack(
             children: <Widget>[
               const BackgroundGeneral(),
-              Consumer<CartModel>(
-                builder: (context, value, child) {
-                  return GridView.builder(
-                    padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width * 0.155,
-                      top: MediaQuery.of(context).size.height * 0.667,
-                    ),
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 5,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 5,
-                    ),
-                    itemBuilder: (context, index) {
-                      return HomePageLista(
-                        produtos: value.shopItems[index][5],
-                        produtosSelecionados: produtosSelecionados,
-                        onProdutoSelecionado: onProdutoSelecionado,
-                      );
-                    },
-                  );
-                },
-              ),
               Column(
                 children: [
                   Row(
@@ -126,18 +103,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     onTap: () => _openEndDrawer(),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.91),
-                    child: InkWell(
-                      child: botaoAdicionar(context),
-                    ),
                   ),
                 ],
               ),

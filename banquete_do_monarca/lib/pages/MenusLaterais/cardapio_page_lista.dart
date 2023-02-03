@@ -33,6 +33,7 @@ class CardapioPageLista extends StatelessWidget {
           child: Row(
             children: [
               GestureDetector(
+                onTap: onPressed,
                 child: Container(
                   margin: EdgeInsets.only(
                     top: MediaQuery.of(context).size.height * 0.27,
@@ -45,9 +46,6 @@ class CardapioPageLista extends StatelessWidget {
                     fit: BoxFit.contain,
                   ),
                 ),
-                onTap: () {
-                  onPressed;
-                },
               ),
             ],
           ),

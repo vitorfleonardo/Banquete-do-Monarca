@@ -28,4 +28,12 @@ class CartModel extends ChangeNotifier {
     }
     return totalPrice.toStringAsFixed(2);
   }
+
+  String calculatePoints() {
+    int totalPoints = 0;
+    for (int i = 0; i < cartItems.length; i++) {
+      totalPoints += int.parse(cartItems[i][3]);
+    }
+    return totalPoints.toStringAsFixed(0);
+  }
 }

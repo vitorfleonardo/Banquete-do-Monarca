@@ -14,7 +14,7 @@ final List dummyProducts = [
     "Osgard",
     "assets/imagens_carrinho/osgard.png",
     "29.90",
-    150,
+    "150",
     "assets/imagens_cardapio/Osgard.png",
     "assets/burgers/primeiro-PP.png",
     ""
@@ -23,7 +23,7 @@ final List dummyProducts = [
     "Pavard",
     "assets/imagens_carrinho/pavard.png",
     "29.90",
-    150,
+    "150",
     "assets/imagens_cardapio/Pavard.png",
     "assets/burgers/quinto-PP.png",
     ""
@@ -32,7 +32,7 @@ final List dummyProducts = [
     "Shalom",
     "assets/imagens_carrinho/shalom.png",
     "29.90",
-    150,
+    "150",
     "assets/imagens_cardapio/Shalom.png",
     "assets/burgers/segundo-PP.png",
     ""
@@ -41,7 +41,7 @@ final List dummyProducts = [
     "Brhonos",
     "assets/imagens_carrinho/brhonos.png",
     "29.90",
-    150,
+    "150",
     "assets/imagens_cardapio/Brhonos.png",
     "assets/burgers/quarto-PP.png",
     ""
@@ -50,7 +50,7 @@ final List dummyProducts = [
     "Selva",
     "assets/imagens_carrinho/selva.png",
     "29.90",
-    150,
+    "150",
     "assets/imagens_cardapio/Selva.png",
     "assets/burgers/terceiro-PP.png",
     ""
@@ -59,7 +59,7 @@ final List dummyProducts = [
     "Tatata",
     "assets/imagens_carrinho/tatata.png",
     "30.00",
-    100,
+    "100",
     "assets/imagens_cardapio/Tatata.png",
     "",
     ""

@@ -13,14 +13,14 @@ class BarraDestaques extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin:
-          EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.245),
-      height: MediaQuery.of(context).size.height * 0.55,
+          EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.05),
+      height: MediaQuery.of(context).size.height * 0.6,
       width: MediaQuery.of(context).size.width * 0.869,
       child: CarouselSlider(
         options: CarouselOptions(
-          aspectRatio: 1.0,
+          aspectRatio: 1,
           enlargeCenterPage: true,
-          enlargeStrategy: CenterPageEnlargeStrategy.height,
+          enlargeStrategy: CenterPageEnlargeStrategy.zoom,
           autoPlay: true,
         ),
         items: imageSliders,
