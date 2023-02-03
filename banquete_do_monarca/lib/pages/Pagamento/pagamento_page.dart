@@ -54,7 +54,7 @@ class _PagamentoPageState extends State<PagamentoPage> {
             children: [
               Container(
                 margin: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.width * 0.08,
+                  top: MediaQuery.of(context).size.width * 0.09,
                   left: MediaQuery.of(context).size.width * 0.25,
                 ),
                 width: MediaQuery.of(context).size.width * 0.5,
@@ -70,7 +70,7 @@ class _PagamentoPageState extends State<PagamentoPage> {
                         "Escolha sua forma de pagamento",
                         style: TextStyle(
                           color: Color.fromARGB(255, 36, 35, 35),
-                          fontSize: 25,
+                          fontSize: 30,
                           fontFamily: 'awesomeLathusca',
                           fontWeight: FontWeight.bold,
                         ),
