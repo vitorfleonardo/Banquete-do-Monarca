@@ -10,7 +10,7 @@ import '../../components/botao_adc_destaques.dart';
 import '../../components/carrinho_view.dart';
 import 'package:banquete_do_monarca/core/app_lists.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/material.dart';
 
 import '../../components/menu_lateral.dart';
 import '../../core/app_colors.dart';
@@ -23,9 +23,9 @@ class PagamentoPage extends StatefulWidget {
 }
 
 class _PagamentoPageState extends State<PagamentoPage> {
-  Future<void> _lauchLink(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url, forceWebView: false, forceSafariVC: false);
+  void costomLaunch(url) async {
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
     } else {
       print("Não pode executar o link $url");
     }
@@ -37,7 +37,7 @@ class _PagamentoPageState extends State<PagamentoPage> {
       return Stack(
         children: <Widget>[
           const BackgroundGeneral(),
-          SizedBox(
+          Container(
             width: MediaQuery.of(context).size.width * 1.0,
             height: MediaQuery.of(context).size.height * 0.14,
             child: const DrawerHeader(
@@ -63,6 +63,7 @@ class _PagamentoPageState extends State<PagamentoPage> {
           Column(
             children: [
               Container(
+                  child: Container(
                 margin: EdgeInsets.only(
                   top: MediaQuery.of(context).size.width * 0.09,
                   left: MediaQuery.of(context).size.width * 0.25,
@@ -88,43 +89,26 @@ class _PagamentoPageState extends State<PagamentoPage> {
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          Column(
-            children: [
-              GestureDetector(
-                  onTap: () => _lauchLink('https://www.globo.com/'),
-                  child: Container(
-                margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.width * 0.2),
-                child: Center(
-                    child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Image.asset(
-                    "assets/imagens_pagamento/pix.png",
-                  ),
-                )),
               )),
             ],
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              GestureDetector(
-                  onTap: () => _lauchLink('https://www.globo.com/'),
-                  child: Container(
-                    margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.width * 0.35),
-                    child: Center(
-                        child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Image.asset(
+              ElevatedButton(onPressed: () {
+                costomLaunch('https://www.globo.com/');
+              },
+              child:  Image.asset(
                         "assets/imagens_pagamento/cartao.png",
-                      ),
-                    )),
-                  )),
+                      ),),
+              ElevatedButton(onPressed: () {
+                costomLaunch('https://www.globo.com/');
+              },
+              child:  Image.asset(
+                        "assets/imagens_pagamento/pix.png",
+                      ),)
             ],
-          ),
+          )
         ],
       );
     }));
