@@ -1,4 +1,4 @@
-//import 'dart:html';
+import 'dart:html';
 import 'package:banquete_do_monarca/pages/MenusLaterais/destaques_page_lista.dart';
 import 'package:banquete_do_monarca/repository/cart_model.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +9,8 @@ import '../../components/barra_de_destaques.dart';
 import '../../components/botao_adc_destaques.dart';
 import '../../components/carrinho_view.dart';
 import 'package:banquete_do_monarca/core/app_lists.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../components/menu_lateral.dart';
 import '../../core/app_colors.dart';
@@ -21,6 +23,14 @@ class PagamentoPage extends StatefulWidget {
 }
 
 class _PagamentoPageState extends State<PagamentoPage> {
+  Future<void> _lauchLink(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url, forceWebView: false, forceSafariVC: false);
+    } else {
+      print("Não pode executar o link $url");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: LayoutBuilder(builder: (context, constraint) {
@@ -83,7 +93,9 @@ class _PagamentoPageState extends State<PagamentoPage> {
           ),
           Column(
             children: [
-              Container(
+              GestureDetector(
+                  onTap: () => _lauchLink('https://www.globo.com/'),
+                  child: Container(
                 margin: EdgeInsets.only(
                     top: MediaQuery.of(context).size.width * 0.2),
                 child: Center(
@@ -93,22 +105,24 @@ class _PagamentoPageState extends State<PagamentoPage> {
                     "assets/imagens_pagamento/pix.png",
                   ),
                 )),
-              ),
+              )),
             ],
           ),
           Column(
             children: [
-              Container(
-                margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.width * 0.35),
-                child: Center(
-                    child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Image.asset(
-                    "assets/imagens_pagamento/cartao.png",
-                  ),
-                )),
-              ),
+              GestureDetector(
+                  onTap: () => _lauchLink('https://www.globo.com/'),
+                  child: Container(
+                    margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.width * 0.35),
+                    child: Center(
+                        child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Image.asset(
+                        "assets/imagens_pagamento/cartao.png",
+                      ),
+                    )),
+                  )),
             ],
           ),
         ],
