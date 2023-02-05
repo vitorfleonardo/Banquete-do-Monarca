@@ -1,11 +1,12 @@
 //import 'dart:html';
-import 'package:banquete_do_monarca/pages/MenusLaterais/destaques_page_lista.dart';
+
 import 'package:banquete_do_monarca/repository/cart_model.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../components/background_geral.dart';
 import '../../components/barra_de_destaques.dart';
-import '../../components/botao_adc_destaques.dart';
+
 import '../../components/carrinho_view.dart';
 import 'package:banquete_do_monarca/core/app_lists.dart';
 
