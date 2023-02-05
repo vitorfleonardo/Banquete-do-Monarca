@@ -1,5 +1,7 @@
 //import 'dart:html';
 
+import 'package:banquete_do_monarca/pages/Login/login_page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/background_geral.dart';
@@ -12,24 +14,12 @@ import '../../components/menu_lateral.dart';
 import '../../core/app_colors.dart';
 
 class HomePage extends StatefulWidget {
-  final Object? users;
-  const HomePage({this.users, Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  List<String> produtosSelecionados = [];
-  void onProdutoSelecionado(String produto) {
-    setState(() {
-      if (produtosSelecionados.contains(produto)) {
-        produtosSelecionados.remove(produto);
-      } else {
-        produtosSelecionados.add(produto);
-      }
-    });
-  }
-
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   void _openEndDrawer() {
     _scaffoldKey.currentState!.openEndDrawer();
@@ -83,8 +73,16 @@ class _HomePageState extends State<HomePage> {
                     decoration: const BoxDecoration(
                       color: Colors.grey,
                     ),
-                    child: const Center(
-                      child: Text('Pontos:'),
+                    child: Center(
+                      child: Text(
+                        '$pontos pontos',
+                        style: TextStyle(
+                            fontFamily: 'awesomeLathusca',
+                            fontWeight: FontWeight.bold,
+                            fontSize:
+                                MediaQuery.of(context).size.height * 0.03),
+                        maxLines: 1,
+                      ),
                     ),
                   ),
                   Padding(

@@ -6,6 +6,10 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+String cpfGeral = "";
+// ignore: prefer_typing_uninitialized_variables
+var pontos;
+
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
@@ -110,15 +114,13 @@ class LoginPage extends StatelessWidget {
                                         if (GetUtils.isCpf(_cpf.text)) {
                                           var teste = await getUser(_cpf.text);
                                           createUser(_cpf.text, teste);
-                                          var teste2 =
-                                              await getUsuario(_cpf.text);
+                                          cpfGeral = _cpf.text;
+                                          pontos = await pontuacao();
                                           // ignore: use_build_context_synchronously
                                           Navigator.of(context).push(
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      StoryPage(
-                                                        usuario: teste2,
-                                                      )));
+                                                      const StoryPage()));
                                         } else {
                                           showDialog<String>(
                                             context: context,
@@ -195,5 +197,23 @@ Future createUser(String cpf, bool userExists) async {
     final docUser = db.collection('usuarios').doc(user.cpf);
     final json = user.toJson();
     await docUser.set(json);
+  }
+}
+
+Future<int> pontuacao() async {
+  pontos = await getPoints(cpfGeral);
+  return pontos;
+}
+
+Future getPoints(String cpf) async {
+  final db = FirebaseFirestore.instance;
+  try {
+    var a = db.collection('usuarios');
+    var teste = await a.doc(cpf).get();
+
+    var pontos = teste['pontos'];
+    return pontos;
+  } catch (e) {
+    return false;
   }
 }

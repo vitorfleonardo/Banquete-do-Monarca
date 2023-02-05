@@ -21,6 +21,17 @@ class CartModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  bool cartVazio() {
+    bool cartVazio;
+    if (cartItems.isEmpty) {
+      cartVazio = true;
+      return cartVazio;
+    } else {
+      cartVazio = false;
+      return cartVazio;
+    }
+  }
+
   String calculateTotal() {
     double totalPrice = 0;
     for (int i = 0; i < cartItems.length; i++) {
