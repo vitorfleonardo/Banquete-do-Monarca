@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Banquete do Monarca',
         debugShowCheckedModeBanner: false,
-        home: CardapioPage(),
+        home: LoginPage(),
       ),
     );
   }

@@ -108,14 +108,17 @@ class LoginPage extends StatelessWidget {
                                       ),
                                       onPressed: () async {
                                         if (GetUtils.isCpf(_cpf.text)) {
-                                          final user = User(cpf: _cpf.text);
-                                          //verificação de existencia de usuario
-                                          createUser(user);
-
+                                          var teste = await getUser(_cpf.text);
+                                          createUser(_cpf.text, teste);
+                                          var teste2 =
+                                              await getUsuario(_cpf.text);
+                                          // ignore: use_build_context_synchronously
                                           Navigator.of(context).push(
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      const StoryPage()));
+                                                      StoryPage(
+                                                        usuario: teste2,
+                                                      )));
                                         } else {
                                           showDialog<String>(
                                             context: context,
@@ -158,9 +161,39 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-Future createUser(User user) async {
-  final docUser =
-      FirebaseFirestore.instance.collection('usuarios').doc(user.cpf);
-  final json = user.toJson();
-  await docUser.set(json);
+Future<bool> getUser(String cpf) async {
+  final db = FirebaseFirestore.instance;
+  try {
+    var a = db.collection('usuarios');
+    var teste = await a.doc(cpf).get();
+
+    return teste.exists;
+  } catch (e) {
+    return false;
+  }
+}
+
+Future<Object> getUsuario(String cpf) async {
+  final db = FirebaseFirestore.instance;
+  try {
+    var a = db.collection('usuarios');
+    var teste = await a.doc(cpf).get();
+
+    var jsonUser = {"pontos": teste['pontos'], "cpf": teste['cpf']};
+
+    return jsonUser;
+  } catch (e) {
+    return false;
+  }
+}
+
+Future createUser(String cpf, bool userExists) async {
+  final db = FirebaseFirestore.instance;
+
+  if (userExists == false) {
+    final user = User(points: 0, cpf: cpf);
+    final docUser = db.collection('usuarios').doc(user.cpf);
+    final json = user.toJson();
+    await docUser.set(json);
+  }
 }

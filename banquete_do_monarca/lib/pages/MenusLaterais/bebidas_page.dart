@@ -1,6 +1,5 @@
-import 'package:banquete_do_monarca/data/dummy_data.dart';
 import 'package:banquete_do_monarca/pages/MenusLaterais/bebidas_page_lista.dart';
-import 'package:banquete_do_monarca/repository/produtos_model.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

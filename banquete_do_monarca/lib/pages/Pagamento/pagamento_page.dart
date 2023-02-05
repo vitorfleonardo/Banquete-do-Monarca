@@ -1,17 +1,8 @@
 //import 'dart:html';
-import 'package:banquete_do_monarca/pages/MenusLaterais/destaques_page_lista.dart';
-import 'package:banquete_do_monarca/repository/cart_model.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:provider/provider.dart';
-import '../../components/background_geral.dart';
-import '../../components/barra_de_destaques.dart';
-import '../../components/botao_adc_destaques.dart';
-import '../../components/carrinho_view.dart';
-import 'package:banquete_do_monarca/core/app_lists.dart';
 
-import '../../components/menu_lateral.dart';
-import '../../core/app_colors.dart';
+import 'package:flutter/material.dart';
+
+import '../../components/background_geral.dart';
 
 class PagamentoPage extends StatefulWidget {
   const PagamentoPage({Key? key}) : super(key: key);
