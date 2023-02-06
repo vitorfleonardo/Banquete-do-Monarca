@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../core/app_colors.dart';
+import '../pages/Login/login_page.dart';
 import '../pages/MenusLaterais/bebidas_page.dart';
 import '../pages/MenusLaterais/cardapio_page.dart';
 import '../pages/MenusLaterais/destaques_page.dart';
@@ -99,26 +100,47 @@ class MenuLateral extends StatelessWidget {
               ),
               GestureDetector(
                 child: Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.only(top: 5.0),
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: 50,
-                    child: const FittedBox(
-                      child: Text(
-                        "Sobre",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 30,
-                            fontFamily: 'awesomeLathusca'),
-                        maxLines: 1,
-                      ),
+                    child: Text(
+                      "Sobre",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: MediaQuery.of(context).size.width * 0.03,
+                          fontFamily: 'awesomeLathusca'),
+                      maxLines: 1,
                     ),
                   ),
                 ),
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const StoryPage()));
+                },
+              ),
+              GestureDetector(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 3.0),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: 35,
+                    child: Text(
+                      "Sair",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: MediaQuery.of(context).size.width * 0.02,
+                          fontFamily: 'awesomeLathusca'),
+                      maxLines: 1,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                  cpfGeral = "";
                 },
               ),
             ],

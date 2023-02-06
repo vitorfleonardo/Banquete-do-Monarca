@@ -1,9 +1,12 @@
+import 'package:banquete_do_monarca/pages/Login/login_page.dart';
 import 'package:banquete_do_monarca/pages/Pagamento/pagamento_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../core/app_colors.dart';
 import '../repository/cart_model.dart';
+
+var pontosRecebidos;
 
 class Carrinho extends StatelessWidget {
   const Carrinho({super.key});
@@ -51,6 +54,8 @@ class Carrinho extends StatelessWidget {
                         child: ListView.builder(
                           itemCount: value.cartItems.length,
                           itemBuilder: (context, index) {
+                            //mostrar pedidos do carrinho
+                            //print(value.cartItems[index][0]);
                             return SingleChildScrollView(
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -150,6 +155,10 @@ class Carrinho extends StatelessWidget {
                               shape: const StadiumBorder(),
                             ),
                             onPressed: () {
+                              pontosRecebidos =
+                                  int.parse(value.calculatePoints());
+                              print(pontos);
+                              print(pontosRecebidos);
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => const PagamentoPage()));
                             },

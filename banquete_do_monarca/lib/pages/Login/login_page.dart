@@ -166,10 +166,10 @@ class LoginPage extends StatelessWidget {
 Future<bool> getUser(String cpf) async {
   final db = FirebaseFirestore.instance;
   try {
-    var a = db.collection('usuarios');
-    var teste = await a.doc(cpf).get();
+    var colecao = db.collection('usuarios');
+    var getcpf = await colecao.doc(cpf).get();
 
-    return teste.exists;
+    return getcpf.exists;
   } catch (e) {
     return false;
   }
@@ -178,10 +178,10 @@ Future<bool> getUser(String cpf) async {
 Future<Object> getUsuario(String cpf) async {
   final db = FirebaseFirestore.instance;
   try {
-    var a = db.collection('usuarios');
-    var teste = await a.doc(cpf).get();
+    var colecao = db.collection('usuarios');
+    var getcpf = await colecao.doc(cpf).get();
 
-    var jsonUser = {"pontos": teste['pontos'], "cpf": teste['cpf']};
+    var jsonUser = {"pontos": getcpf['pontos'], "cpf": getcpf['cpf']};
 
     return jsonUser;
   } catch (e) {
@@ -208,10 +208,10 @@ Future<int> pontuacao() async {
 Future getPoints(String cpf) async {
   final db = FirebaseFirestore.instance;
   try {
-    var a = db.collection('usuarios');
-    var teste = await a.doc(cpf).get();
+    var colecao = db.collection('usuarios');
+    var getcpf = await colecao.doc(cpf).get();
 
-    var pontos = teste['pontos'];
+    var pontos = getcpf['pontos'];
     return pontos;
   } catch (e) {
     return false;

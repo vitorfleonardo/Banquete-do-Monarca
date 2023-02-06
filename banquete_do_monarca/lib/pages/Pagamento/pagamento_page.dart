@@ -1,10 +1,13 @@
 //import 'dart:html';
 
+import 'package:banquete_do_monarca/pages/Login/login_page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../components/background_geral.dart';
+import '../../components/carrinho_view.dart';
 import '../MenusLaterais/destaques_page.dart';
 
 class PagamentoPage extends StatefulWidget {
@@ -92,7 +95,8 @@ class _PagamentoPageState extends State<PagamentoPage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      irPagar('https://www.globo.com/');
+                      addPointsUser(pontosRecebidos, pontos);
+                      irPagar('https://g1.globo.com//');
                     },
                     child: Image.asset(
                       "assets/imagens_pagamento/cartao.png",
@@ -103,6 +107,7 @@ class _PagamentoPageState extends State<PagamentoPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
                       onPressed: () {
+                        addPointsUser(pontosRecebidos, pontos);
                         irPagar('https://www.globo.com/');
                       },
                       child: Image.asset(
@@ -119,4 +124,12 @@ class _PagamentoPageState extends State<PagamentoPage> {
       );
     }));
   }
+}
+
+Future addPointsUser(int pontosRecebidos, int pontosUser) async {
+  int novaPontuacao;
+  novaPontuacao = pontosUser + pontosRecebidos;
+  final db = FirebaseFirestore.instance;
+  var colecao = db.collection('usuarios');
+  await colecao.doc(cpfGeral).update({"pontos": novaPontuacao});
 }
