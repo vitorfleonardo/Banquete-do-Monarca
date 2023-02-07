@@ -5,7 +5,11 @@ class CartModel extends ChangeNotifier {
   // list of items on sale
   final List _shopItems = dummyProducts;
 
+  final List _brindesItems = brindProducts;
+
   final List _cartItems = [];
+
+  get brindesItems => _brindesItems;
 
   get cartItems => _cartItems;
 
@@ -21,15 +25,14 @@ class CartModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  bool cartVazio() {
-    bool cartVazio;
-    if (cartItems.isEmpty) {
-      cartVazio = true;
-      return cartVazio;
-    } else {
-      cartVazio = false;
-      return cartVazio;
-    }
+  void addBrindeToCart(int index) {
+    _cartItems.add(_brindesItems[index]);
+    notifyListeners();
+  }
+
+  void removeBrindeToCart(int index) {
+    _cartItems.removeAt(_brindesItems[index]);
+    notifyListeners();
   }
 
   String calculateTotal() {

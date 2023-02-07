@@ -92,3 +92,27 @@ final List dummyProducts = [
     "assets/imagens_bebidas/Oriumm.png",
   ]
 ];
+
+final List brindProducts = [
+  [
+    "Jatomân",
+    "assets/imagens_mercado/jatoman-p.png",
+    "00",
+    "-300",
+    "assets/imagens_mercado/troca.png",
+  ],
+  [
+    "Tatatá",
+    "assets/imagens_mercado/tatata-p.png",
+    "00",
+    "-600",
+    "assets/imagens_mercado/troca.png",
+  ],
+  [
+    "Garrafinha",
+    "assets/imagens_mercado/garafa-p.png",
+    "00",
+    "-1000",
+    "assets/imagens_mercado/troca.png",
+  ]
+];

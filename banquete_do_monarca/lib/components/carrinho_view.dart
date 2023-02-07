@@ -157,8 +157,6 @@ class Carrinho extends StatelessWidget {
                             onPressed: () {
                               pontosRecebidos =
                                   int.parse(value.calculatePoints());
-                              print(pontos);
-                              print(pontosRecebidos);
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => const PagamentoPage()));
                             },
