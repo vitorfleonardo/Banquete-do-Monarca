@@ -7,28 +7,30 @@ class StoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Scaffold(
-        body: LayoutBuilder(
-          builder: (context, constraint) {
-            return Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                image: AssetImage(
-                  "assets/images/Storytelling.jpeg",
-                ),
-                fit: BoxFit.fill,
-              )),
-            );
-          },
+    return SafeArea(
+      child: GestureDetector(
+        child: Scaffold(
+          body: LayoutBuilder(
+            builder: (context, constraint) {
+              return Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                  image: AssetImage(
+                    "assets/images/Storytelling.jpeg",
+                  ),
+                  fit: BoxFit.fill,
+                )),
+              );
+            },
+          ),
         ),
+        onTap: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => const HomePage()));
+        },
       ),
-      onTap: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => const HomePage()));
-      },
     );
   }
 }

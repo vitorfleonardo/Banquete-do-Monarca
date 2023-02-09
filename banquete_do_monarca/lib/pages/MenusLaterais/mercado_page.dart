@@ -25,141 +25,152 @@ void _openEndDrawer() {
 class _MercadoPageState extends State<MercadoPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: _scaffoldKey,
-      endDrawer: const Carrinho(),
-      body: LayoutBuilder(
-        builder: (context, constraint) {
-          return Stack(
-            children: <Widget>[
-              const BackgroundGeneral(),
-              Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [BackgroundMercado(context)]),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                      margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.35,
-                        left: MediaQuery.of(context).size.height * 0.975,
-                      ),
-                      width: MediaQuery.of(context).size.width * 0.25,
-                      height: MediaQuery.of(context).size.height * 0.150,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage("assets/imagens_mercado/coca.png"),
-                          fit: BoxFit.fill,
+    return SafeArea(
+      child: Scaffold(
+        key: _scaffoldKey,
+        endDrawer: const Carrinho(),
+        body: LayoutBuilder(
+          builder: (context, constraint) {
+            return Stack(
+              children: <Widget>[
+                const BackgroundGeneral(),
+                Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [BackgroundMercado(context)]),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                        margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.35,
+                          left: MediaQuery.of(context).size.height * 0.975,
                         ),
-                      )),
-                  Container(
-                      margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.04,
-                        left: MediaQuery.of(context).size.height * 0.975,
-                      ),
-                      width: MediaQuery.of(context).size.width * 0.25,
-                      height: MediaQuery.of(context).size.height * 0.20,
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(
-                                  "assets/imagens_mercado/batata.png")))),
-                  Container(
-                      margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.005,
-                        left: MediaQuery.of(context).size.height * 0.975,
-                      ),
-                      width: MediaQuery.of(context).size.width * 0.25,
-                      height: MediaQuery.of(context).size.height * 0.25,
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(
-                                  "assets/imagens_mercado/garrafinha.png")))),
-                ],
-              ),
-              Container(
-                margin: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * 0.32,
-                  left: MediaQuery.of(context).size.height * 1.35,
-                ),
-                child: Consumer<CartModel>(
-                  builder: (context, value, child) {
-                    return ListView.builder(
-                      itemCount: 3,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            TrocaMercado(
-                              onPressed: () =>
-                                  Provider.of<CartModel>(context, listen: false)
-                                      .addBrindeToCart(index),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  },
-                ),
-              ),
-              Column(
-                children: [
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [MenuLateral()])
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.13,
-                    height: MediaQuery.of(context).size.height * 0.11,
-                    decoration: const BoxDecoration(
-                      color: Colors.grey,
-                    ),
-                    child: Center(
-                      child: Text(
-                        '$pontos pontos',
-                        style: TextStyle(
-                            fontFamily: 'awesomeLathusca',
-                            fontWeight: FontWeight.bold,
-                            fontSize:
-                                MediaQuery.of(context).size.height * 0.03),
-                        maxLines: 1,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: GestureDetector(
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.13,
-                        height: MediaQuery.of(context).size.height * 0.11,
+                        width: MediaQuery.of(context).size.width * 0.25,
+                        height: MediaQuery.of(context).size.height * 0.150,
                         decoration: const BoxDecoration(
-                          color: AppColors.secondary,
+                          image: DecorationImage(
+                            image:
+                                AssetImage("assets/imagens_mercado/coca.png"),
+                            fit: BoxFit.fill,
+                          ),
+                        )),
+                    Container(
+                        margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.04,
+                          left: MediaQuery.of(context).size.height * 0.975,
                         ),
-                        child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: FittedBox(
-                            child: Text(
-                              "Meus Pedidos",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'awesomeLathusca'),
-                              maxLines: 1,
+                        width: MediaQuery.of(context).size.width * 0.25,
+                        height: MediaQuery.of(context).size.height * 0.20,
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/imagens_mercado/batata.png")))),
+                    Container(
+                        margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.005,
+                          left: MediaQuery.of(context).size.height * 0.975,
+                        ),
+                        width: MediaQuery.of(context).size.width * 0.25,
+                        height: MediaQuery.of(context).size.height * 0.25,
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/imagens_mercado/garrafinha.png")))),
+                  ],
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.32,
+                    left: MediaQuery.of(context).size.height * 1.35,
+                  ),
+                  child: Consumer<CartModel>(
+                    builder: (context, value, child) {
+                      return ListView.builder(
+                        itemCount: 3,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            children: [
+                              TrocaMercado(onPressed: () {
+                                Provider.of<CartModel>(context, listen: false)
+                                    .addBrindeToCart(index);
+                                showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return const AlertDialog(
+                                      content: Text(
+                                          'Seu brinde foi adicionado ao carrinho!'),
+                                    );
+                                  },
+                                );
+                              }),
+                            ],
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ),
+                Column(
+                  children: [
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [MenuLateral()])
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.13,
+                      height: MediaQuery.of(context).size.height * 0.11,
+                      decoration: const BoxDecoration(
+                        color: Colors.grey,
+                      ),
+                      child: Center(
+                        child: Text(
+                          '$pontos pontos',
+                          style: TextStyle(
+                              fontFamily: 'awesomeLathusca',
+                              fontWeight: FontWeight.bold,
+                              fontSize:
+                                  MediaQuery.of(context).size.height * 0.03),
+                          maxLines: 1,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: GestureDetector(
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.13,
+                          height: MediaQuery.of(context).size.height * 0.11,
+                          decoration: const BoxDecoration(
+                            color: AppColors.secondary,
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: FittedBox(
+                              child: Text(
+                                "Meus Pedidos",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'awesomeLathusca'),
+                                maxLines: 1,
+                              ),
                             ),
                           ),
                         ),
+                        onTap: () => _openEndDrawer(),
                       ),
-                      onTap: () => _openEndDrawer(),
                     ),
-                  ),
-                ],
-              ),
-            ],
-          );
-        },
+                  ],
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

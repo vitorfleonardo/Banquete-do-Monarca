@@ -41,82 +41,84 @@ class _HomePageState extends State<HomePage> {
           ),
         )
         .toList();
-    return Scaffold(
-      key: _scaffoldKey,
-      endDrawer: const Carrinho(),
-      body: LayoutBuilder(
-        builder: (context, constraint) {
-          return Stack(
-            children: <Widget>[
-              const BackgroundGeneral(),
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      MenuLateral(),
-                      Column(
-                        children: [
-                          BarraDestaques(imageSliders: imageSliders),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.13,
-                    height: MediaQuery.of(context).size.height * 0.11,
-                    decoration: const BoxDecoration(
-                      color: Colors.grey,
-                    ),
-                    child: Center(
-                      child: Text(
-                        '$pontos pontos',
-                        style: TextStyle(
-                            fontFamily: 'awesomeLathusca',
-                            fontWeight: FontWeight.bold,
-                            fontSize:
-                                MediaQuery.of(context).size.height * 0.03),
-                        maxLines: 1,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: GestureDetector(
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.13,
-                        height: MediaQuery.of(context).size.height * 0.11,
-                        decoration: const BoxDecoration(
-                          color: AppColors.secondary,
+    return SafeArea(
+      child: Scaffold(
+        key: _scaffoldKey,
+        endDrawer: const Carrinho(),
+        body: LayoutBuilder(
+          builder: (context, constraint) {
+            return Stack(
+              children: <Widget>[
+                const BackgroundGeneral(),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        MenuLateral(),
+                        Column(
+                          children: [
+                            BarraDestaques(imageSliders: imageSliders),
+                          ],
                         ),
-                        child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: FittedBox(
-                            child: Text(
-                              "Meus Pedidos",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'awesomeLathusca'),
-                              maxLines: 1,
+                      ],
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.13,
+                      height: MediaQuery.of(context).size.height * 0.11,
+                      decoration: const BoxDecoration(
+                        color: Colors.grey,
+                      ),
+                      child: Center(
+                        child: Text(
+                          '$pontos pontos',
+                          style: TextStyle(
+                              fontFamily: 'awesomeLathusca',
+                              fontWeight: FontWeight.bold,
+                              fontSize:
+                                  MediaQuery.of(context).size.height * 0.03),
+                          maxLines: 1,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: GestureDetector(
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.13,
+                          height: MediaQuery.of(context).size.height * 0.11,
+                          decoration: const BoxDecoration(
+                            color: AppColors.secondary,
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: FittedBox(
+                              child: Text(
+                                "Meus Pedidos",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'awesomeLathusca'),
+                                maxLines: 1,
+                              ),
                             ),
                           ),
                         ),
+                        onTap: () => _openEndDrawer(),
                       ),
-                      onTap: () => _openEndDrawer(),
                     ),
-                  ),
-                ],
-              ),
-            ],
-          );
-        },
+                  ],
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }
