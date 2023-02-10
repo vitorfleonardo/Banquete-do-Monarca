@@ -1,6 +1,7 @@
 //import 'dart:html';
 
 import 'package:banquete_do_monarca/pages/Login/login_page.dart';
+import 'package:banquete_do_monarca/pages/Pagamento/obrigado.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -100,6 +101,8 @@ class _PagamentoPageState extends State<PagamentoPage> {
                       onPressed: () {
                         addPointsUser(pontosRecebidos, pontos);
                         irPagar('https://g1.globo.com//');
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const ObrigadoPage()));
                       },
                       child: Image.asset(
                         "assets/imagens_pagamento/cartao.png",
@@ -112,6 +115,8 @@ class _PagamentoPageState extends State<PagamentoPage> {
                         onPressed: () {
                           addPointsUser(pontosRecebidos, pontos);
                           irPagar('https://www.globo.com/');
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const ObrigadoPage()));
                         },
                         child: Image.asset(
                           "assets/imagens_pagamento/pix.png",
