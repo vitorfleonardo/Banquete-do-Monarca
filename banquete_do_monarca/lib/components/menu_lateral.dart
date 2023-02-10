@@ -53,18 +53,17 @@ class MenuLateral extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: prefer_typing_uninitialized_variables
     var appColors;
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Container(
-          margin:
-              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.11),
-          width: MediaQuery.of(context).size.width * 0.13,
-          height: MediaQuery.of(context).size.height * 0.89,
-          decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 50, 91, 124),
-          ),
-          child: Column(
+    return Container(
+      margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.11),
+      width: MediaQuery.of(context).size.width * 0.13,
+      height: MediaQuery.of(context).size.height * 0.8187,
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(255, 50, 91, 124),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Column(
             children: [
               OpcoesMenu(
                 navigator: const HomePage(),
@@ -99,20 +98,17 @@ class MenuLateral extends StatelessWidget {
                     : const Color.fromARGB(255, 50, 91, 124),
               ),
               GestureDetector(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 5.0),
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: 50,
-                    child: Text(
-                      "Sobre",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.width * 0.03,
-                          fontFamily: 'awesomeLathusca'),
-                      maxLines: 1,
-                    ),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 40,
+                  child: Text(
+                    "Sobre",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: MediaQuery.of(context).size.width * 0.03,
+                        fontFamily: 'awesomeLathusca'),
+                    maxLines: 1,
                   ),
                 ),
                 onTap: () {
@@ -121,20 +117,17 @@ class MenuLateral extends StatelessWidget {
                 },
               ),
               GestureDetector(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 3.0),
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: 35,
-                    child: Text(
-                      "Sair",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.width * 0.02,
-                          fontFamily: 'awesomeLathusca'),
-                      maxLines: 1,
-                    ),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 40,
+                  child: Text(
+                    "Sair",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: MediaQuery.of(context).size.width * 0.02,
+                        fontFamily: 'awesomeLathusca'),
+                    maxLines: 1,
                   ),
                 ),
                 onTap: () {
@@ -145,8 +138,8 @@ class MenuLateral extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

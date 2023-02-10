@@ -42,7 +42,7 @@ class _MercadoPageState extends State<MercadoPage> {
                   children: [
                     Container(
                         margin: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.35,
+                          top: MediaQuery.of(context).size.height * 0.32,
                           left: MediaQuery.of(context).size.height * 0.975,
                         ),
                         width: MediaQuery.of(context).size.width * 0.25,
@@ -56,7 +56,7 @@ class _MercadoPageState extends State<MercadoPage> {
                         )),
                     Container(
                         margin: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.04,
+                          top: MediaQuery.of(context).size.height * 0.02,
                           left: MediaQuery.of(context).size.height * 0.975,
                         ),
                         width: MediaQuery.of(context).size.width * 0.25,
@@ -66,21 +66,23 @@ class _MercadoPageState extends State<MercadoPage> {
                                 image: AssetImage(
                                     "assets/imagens_mercado/batata.png")))),
                     Container(
-                        margin: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.005,
-                          left: MediaQuery.of(context).size.height * 0.975,
+                      margin: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.height * 0.975,
+                      ),
+                      width: MediaQuery.of(context).size.width * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.20,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                              "assets/imagens_mercado/garrafinha.png"),
                         ),
-                        width: MediaQuery.of(context).size.width * 0.25,
-                        height: MediaQuery.of(context).size.height * 0.25,
-                        decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    "assets/imagens_mercado/garrafinha.png")))),
+                      ),
+                    ),
                   ],
                 ),
                 Container(
                   margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.32,
+                    top: MediaQuery.of(context).size.height * 0.28,
                     left: MediaQuery.of(context).size.height * 1.35,
                   ),
                   child: Consumer<CartModel>(
