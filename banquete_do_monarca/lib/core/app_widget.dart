@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
       child: const MaterialApp(
         title: 'Banquete do Monarca',
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: ObrigadoPage(),
       ),
     );
   }

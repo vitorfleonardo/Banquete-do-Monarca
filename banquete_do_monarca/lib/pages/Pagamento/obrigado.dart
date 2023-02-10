@@ -73,7 +73,7 @@ class _ObrigadoPageState extends State<ObrigadoPage> {
             Column(children: [
               Container(
                 margin: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.82,
+                  left: MediaQuery.of(context).size.width * 0.84,
                   top: MediaQuery.of(context).size.width * 0.5,
                 ),
                 width: MediaQuery.of(context).size.width * 0.15,
