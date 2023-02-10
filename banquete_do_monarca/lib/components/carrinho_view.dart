@@ -145,7 +145,7 @@ class Carrinho extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(
                             top: MediaQuery.of(context).size.height * 0.01,
-                            left: MediaQuery.of(context).size.width * 0.16,
+                            left: MediaQuery.of(context).size.width * 0.08,
                           ),
                           width: MediaQuery.of(context).size.width * 0.16,
                           height: MediaQuery.of(context).size.height * 0.1,
@@ -189,7 +189,7 @@ class Carrinho extends StatelessWidget {
                         //********************************** */
                         Container(
                           margin: EdgeInsets.only(
-                            left: MediaQuery.of(context).size.width * 0.16,
+                            left: MediaQuery.of(context).size.width * 0.08,
                           ),
                           child: RichText(
                             text: TextSpan(
