@@ -17,14 +17,15 @@ class Carrinho extends StatelessWidget {
       builder: (context, value, child) {
         return SizedBox(
           width: MediaQuery.of(context).size.width * 0.5,
+          height: MediaQuery.of(context).size.height,
           child: Drawer(
             child: Column(
               children: [
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
                   height: MediaQuery.of(context).size.height * 0.14,
-                  child: const DrawerHeader(
-                    decoration: BoxDecoration(
+                  child: DrawerHeader(
+                    decoration: const BoxDecoration(
                       color: AppColors.secondary,
                     ),
                     child: Center(
@@ -34,7 +35,7 @@ class Carrinho extends StatelessWidget {
                           "Meus Pedidos",
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 40,
+                            fontSize: MediaQuery.of(context).size.height * 0.07,
                             fontFamily: 'awesomeLathusca',
                             fontWeight: FontWeight.bold,
                           ),
@@ -46,7 +47,7 @@ class Carrinho extends StatelessWidget {
 
                 //Listar produtos no carrinho
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.66,
+                  height: MediaQuery.of(context).size.height * 0.6,
                   width: double.infinity,
                   child: Column(
                     children: [
@@ -109,7 +110,7 @@ class Carrinho extends StatelessWidget {
                       children: [
                         Container(
                           margin: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.height * 0.025,
+                            top: MediaQuery.of(context).size.height * 0.015,
                           ),
                           child: Text(
                             'Valor Total',
@@ -124,7 +125,7 @@ class Carrinho extends StatelessWidget {
                         ),
                         Container(
                           margin: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.height * 0.015,
+                            top: MediaQuery.of(context).size.height * 0.01,
                             left: MediaQuery.of(context).size.height * 0.05,
                           ),
                           child: Text(
@@ -143,6 +144,7 @@ class Carrinho extends StatelessWidget {
                       children: [
                         Container(
                           margin: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height * 0.01,
                             left: MediaQuery.of(context).size.width * 0.16,
                           ),
                           width: MediaQuery.of(context).size.width * 0.16,
@@ -180,6 +182,7 @@ class Carrinho extends StatelessWidget {
                             text: TextSpan(
                               text: 'Receba ',
                               style: TextStyle(
+                                  color: Colors.black,
                                   fontSize: MediaQuery.of(context).size.height *
                                       0.022,
                                   fontWeight: FontWeight.w900),
@@ -195,6 +198,7 @@ class Carrinho extends StatelessWidget {
                                 TextSpan(
                                     text: 'na Compra',
                                     style: TextStyle(
+                                        color: Colors.black,
                                         fontSize:
                                             MediaQuery.of(context).size.height *
                                                 0.022,
