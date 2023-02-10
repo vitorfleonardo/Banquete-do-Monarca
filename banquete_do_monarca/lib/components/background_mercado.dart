@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Container BackgroundMercado(BuildContext context) {
+Container backgroundmercado(BuildContext context) {
   return Container(
     margin: EdgeInsets.only(
       top: MediaQuery.of(context).size.height * 0.11,

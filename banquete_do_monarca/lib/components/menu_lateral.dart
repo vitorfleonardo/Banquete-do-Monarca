@@ -56,7 +56,7 @@ class MenuLateral extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.11),
       width: MediaQuery.of(context).size.width * 0.13,
-      height: MediaQuery.of(context).size.height * 0.8187,
+      height: MediaQuery.of(context).size.height * 0.89,
       decoration: const BoxDecoration(
         color: Color.fromARGB(255, 50, 91, 124),
       ),
@@ -100,7 +100,7 @@ class MenuLateral extends StatelessWidget {
               GestureDetector(
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  height: 40,
+                  height: 50,
                   child: Text(
                     "Sobre",
                     textAlign: TextAlign.center,
@@ -119,7 +119,7 @@ class MenuLateral extends StatelessWidget {
               GestureDetector(
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  height: 40,
+                  height: 30,
                   child: Text(
                     "Sair",
                     textAlign: TextAlign.center,
@@ -131,8 +131,8 @@ class MenuLateral extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => LoginPage()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const LoginPage()));
                   cpfGeral = "";
                 },
               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class TrocaMercado extends StatelessWidget {
   void Function()? onPressed;
   TrocaMercado({

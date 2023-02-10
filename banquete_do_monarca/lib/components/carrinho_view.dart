@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import '../core/app_colors.dart';
 import '../repository/cart_model.dart';
 
-var pontosRecebidos;
+var pontosRecebidos = 0;
 
 class Carrinho extends StatelessWidget {
   const Carrinho({super.key});
@@ -56,7 +56,7 @@ class Carrinho extends StatelessWidget {
                           itemCount: value.cartItems.length,
                           itemBuilder: (context, index) {
                             //mostrar pedidos do carrinho
-                            //print(value.cartItems[index][0]);
+
                             return SingleChildScrollView(
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -158,9 +158,22 @@ class Carrinho extends StatelessWidget {
                             ),
                             onPressed: () {
                               pontosRecebidos =
-                                  int.parse(value.calculatePoints());
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const PagamentoPage()));
+                                  int.parse(value.calculatePoints()) * -1;
+                              if (pontosRecebidos > pontos) {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return const AlertDialog(
+                                      content: Text(
+                                          'Você não pode trocar seus pontos por esse brinde'),
+                                    );
+                                  },
+                                );
+                              } else {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) =>
+                                        const PagamentoPage()));
+                              }
                             },
                             child: FittedBox(
                               child: Text('Fazer Pedido',
@@ -188,13 +201,15 @@ class Carrinho extends StatelessWidget {
                                   fontWeight: FontWeight.w900),
                               children: <TextSpan>[
                                 TextSpan(
-                                    text: '${value.calculatePoints()}pts ',
-                                    style: TextStyle(
-                                        color: Colors.red,
-                                        fontSize:
-                                            MediaQuery.of(context).size.height *
-                                                0.022,
-                                        fontWeight: FontWeight.w900)),
+                                  text: '${value.calculatePoints()}pts ',
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.022,
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ),
                                 TextSpan(
                                     text: 'na Compra',
                                     style: TextStyle(

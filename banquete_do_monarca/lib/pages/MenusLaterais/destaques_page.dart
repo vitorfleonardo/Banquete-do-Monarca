@@ -1,7 +1,7 @@
 //import 'dart:html';
 
 import 'package:banquete_do_monarca/pages/Login/login_page.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../components/background_geral.dart';

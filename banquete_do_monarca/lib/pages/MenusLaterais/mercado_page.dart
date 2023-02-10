@@ -36,7 +36,7 @@ class _MercadoPageState extends State<MercadoPage> {
                 const BackgroundGeneral(),
                 Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [BackgroundMercado(context)]),
+                    children: [backgroundmercado(context)]),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
