@@ -1,13 +1,7 @@
 //import 'dart:html';
-
 import 'package:banquete_do_monarca/pages/Login/login_page.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
-
 import '../../components/background_geral.dart';
-import '../../components/carrinho_view.dart';
 import '../MenusLaterais/destaques_page.dart';
 
 class ObrigadoPage extends StatefulWidget {
@@ -25,35 +19,32 @@ class _ObrigadoPageState extends State<ObrigadoPage> {
         return Stack(
           children: <Widget>[
             const BackgroundGeneral(),
-            Container(
-              child: Center(
-                  child: Column(
-                children: [
-                  Container(
-                      width: MediaQuery.of(context).size.width * 0.85,
-                      height: MediaQuery.of(context).size.height * 0.6,
-                      margin: EdgeInsets.only(
-                          //left: MediaQuery.of(context).size.width * 0.06,
-                          top: MediaQuery.of(context).size.width * 0.09),
-                      child: Center(
-                        child: FittedBox(
-                          fit: BoxFit.fitWidth,
-                          child: Text(
-                            "Pagamento realizado com sucesso",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 255, 255, 255),
-                              fontSize: MediaQuery.of(context).size.width * 0.1,
-                              fontFamily: 'awesomeLathusca',
-                              fontWeight: FontWeight.bold,
-                            ),
+            Center(
+                child: Column(
+              children: [
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.85,
+                    height: MediaQuery.of(context).size.height * 0.6,
+                    margin: EdgeInsets.only(
+                        //left: MediaQuery.of(context).size.width * 0.06,
+                        top: MediaQuery.of(context).size.width * 0.09),
+                    child: Center(
+                      child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Text(
+                          "Pagamento realizado com sucesso",
+                          style: TextStyle(
+                            color: const Color.fromARGB(255, 255, 255, 255),
+                            fontSize: MediaQuery.of(context).size.width * 0.1,
+                            fontFamily: 'awesomeLathusca',
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                      )),
-                ],
-              )),
-            ),
-            Container(
-                child: Center(
+                      ),
+                    )),
+              ],
+            )),
+            Center(
               child: Column(
                 children: [
                   Container(
@@ -68,7 +59,7 @@ class _ObrigadoPageState extends State<ObrigadoPage> {
                           child: Text(
                             "Volte sempre",
                             style: TextStyle(
-                              color: Color.fromARGB(255, 255, 255, 255),
+                              color: const Color.fromARGB(255, 255, 255, 255),
                               fontSize: MediaQuery.of(context).size.width * 0.1,
                               fontFamily: 'awesomeLathusca',
                               fontWeight: FontWeight.bold,
@@ -78,7 +69,7 @@ class _ObrigadoPageState extends State<ObrigadoPage> {
                       )),
                 ],
               ),
-            )),
+            ),
             Column(children: [
               Container(
                 margin: EdgeInsets.only(
@@ -90,7 +81,7 @@ class _ObrigadoPageState extends State<ObrigadoPage> {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
-                    backgroundColor: Color.fromARGB(255, 51, 31, 4),
+                    backgroundColor: const Color.fromARGB(255, 51, 31, 4),
                     shape: const StadiumBorder(),
                   ),
                   onPressed: () {
@@ -118,7 +109,7 @@ class _ObrigadoPageState extends State<ObrigadoPage> {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
-                    backgroundColor: Color.fromARGB(255, 51, 31, 4),
+                    backgroundColor: const Color.fromARGB(255, 51, 31, 4),
                     shape: const StadiumBorder(),
                   ),
                   onPressed: () {
