@@ -1,10 +1,16 @@
-# Banquete-do-Monarca
-Aplicativo gamificado de cardápio para restaurante temático medieval 
+# banquete_do_monarca
 
-Feito por:
-Douglas Marinho Martins, GitHub: M4RINH0; (Flutter and Dart)
-Luiza Maluf, GitHub: LuizaMaluf; (Flutter and Dart)
-Renan Vieira Guedes, GitHub: R-enanVieira; (Dart and Firebase)
-Carlos Eduardo, GitHub: CADU110; (Dart and Firebase)
-Vitor Feijó Leonardo, GitHub: vitorfleonardo; (Mockups)
- 
+A new Flutter project.
+
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
